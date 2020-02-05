@@ -9,7 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+//TODO: Margiett will be working on this view controller 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
