@@ -10,6 +10,8 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
 
+    // TODO: Kelby is going to work on Favorites View Controller
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
