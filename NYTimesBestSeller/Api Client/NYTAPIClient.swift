@@ -31,8 +31,8 @@ struct NYTAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    let bookSearch = try JSONDecoder().decode(BookData.self, from: data)
-                    let bookHits = bookSearch.books
+                    let bookSearch = try JSONDecoder().decode(BookSearch.self, from: data)
+                    let bookHits = bookSearch.results.books
                     completion(.success(bookHits))
                 } catch {
                     completion(.failure(.decodingError(error)))
