@@ -31,6 +31,8 @@ extension BestSellerViewController: UICollectionViewDataSource {
         return 10
     }
     
+
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bestCell", for: indexPath) as? BestSellerCell else {
             fatalError()
