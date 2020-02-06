@@ -9,13 +9,56 @@
 import UIKit
 
 class BestSellerView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    public lazy var bestSellerCV: UICollectionView = {
+       let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        cv.backgroundColor = .systemBlue
+        return cv
+    }()
+    
+    public lazy var pickerView: UIPickerView = {
+       let pv = UIPickerView()
+        pv.backgroundColor = .systemRed
+        return pv
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        setUpCV()
+        setupPicker()
+    }
+    
+    private func setUpCV() {
+        addSubview(bestSellerCV)
+        bestSellerCV.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            bestSellerCV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
+            bestSellerCV.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            bestSellerCV.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            bestSellerCV.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.40)
+        ])
+    }
+    
+    private func setupPicker() {
+        addSubview(pickerView)
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pickerView.topAnchor.constraint(equalTo: bestSellerCV.bottomAnchor, constant: 20),
+            pickerView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            pickerView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            pickerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
+        ])
+    }
+    
 }
