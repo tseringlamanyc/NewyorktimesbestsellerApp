@@ -12,7 +12,7 @@ class TabBarController: UITabBarController {
     
     private var bestSellerVC: BestSellerViewController = {
        let vc = BestSellerViewController()
-        vc.tabBarItem = UITabBarItem(title: "1", image: UIImage(systemName: "magnifyingglass"), tag: 0)
+        vc.tabBarItem = UITabBarItem(title: "Best Seller", image: UIImage(systemName: "book.circle"), tag: 0)
         return vc
     }()
     
