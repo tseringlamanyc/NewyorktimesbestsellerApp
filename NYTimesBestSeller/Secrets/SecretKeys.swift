@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct APIKey {
+    static let nYTKey = "O4upADVEFCAGpp8dntBivAZci04II1uv"
+}

@@ -18,7 +18,7 @@ class TabBarController: UITabBarController {
     
     private var favoritesVC: FavoritesViewController = {
        let vc = FavoritesViewController()
-        vc.tabBarItem = UITabBarItem(title: "2", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        vc.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         return vc
     }()
 
