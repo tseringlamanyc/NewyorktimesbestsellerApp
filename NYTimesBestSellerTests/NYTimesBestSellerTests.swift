@@ -15,7 +15,7 @@ class NYTimesBestSellerTests: XCTestCase {
         
         let expectedTitle = "AMERICAN DIRT"
         
-        NYTAPIClient.getPix(for: "hardcover-fiction") { (result) in
+        NYTAPIClient.getBooks(for: "hardcover-fiction") { (result) in
             switch result {
             case .failure(let error):
                 XCTFail("decoding error: \(error)")

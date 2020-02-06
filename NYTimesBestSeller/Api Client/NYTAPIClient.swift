@@ -13,10 +13,10 @@ import NetworkHelper
 
 struct NYTAPIClient {
     
-    static func getPix(for category: String, completion: @escaping (Result<[Book], AppError>) -> ()) {
+    static func getBooks(for category: String, completion: @escaping (Result<[Book], AppError>) -> ()) {
         
-        
-        let nytEndpointURL = "https://api.nytimes.com/svc/books/v3/lists/current/\(category).json?api-key=\(APIKey.nYTKey)"
+        let list = category.replacingOccurrences(of: " ", with: "-")
+        let nytEndpointURL = "https://api.nytimes.com/svc/books/v3/lists/current/\(list).json?api-key=\(APIKey.nYTKey)"
         
         guard let url = URL(string: nytEndpointURL) else {
             completion(.failure(.badURL(nytEndpointURL)))
