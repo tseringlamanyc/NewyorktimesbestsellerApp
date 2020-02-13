@@ -14,6 +14,7 @@ class BestSellerCell: UICollectionViewCell {
     public lazy var booksImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true 
         return imageView
     }()
     
