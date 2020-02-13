@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		026F36F223F5B66B00980EF7 /* FavoritesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F123F5B66B00980EF7 /* FavoritesDetailController.swift */; };
+		026F36F423F5B6BB00980EF7 /* FavoritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */; };
+		026F36F823F5B75700980EF7 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F723F5B75700980EF7 /* GoogleModel.swift */; };
+		026F36FA23F5B7CF00980EF7 /* GoogleAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */; };
 		52282B5423F4EB5F0092453D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5323F4EB5F0092453D /* CategoryModel.swift */; };
 		52282B5623F4EBE80092453D /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5523F4EBE80092453D /* CategoryAPI.swift */; };
 		527ACA6D23EB56F700D775E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA6C23EB56F700D775E0 /* AppDelegate.swift */; };
@@ -14,7 +19,7 @@
 		527ACA7123EB56F700D775E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA7023EB56F700D775E0 /* ViewController.swift */; };
 		527ACA7623EB56FA00D775E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527ACA7523EB56FA00D775E0 /* Assets.xcassets */; };
 		527ACA7923EB56FA00D775E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527ACA7723EB56FA00D775E0 /* LaunchScreen.storyboard */; };
-		527ACA8223EB57A800D775E0 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 527ACA8123EB57A800D775E0 /* SwiftPackageProductDependency */; };
+		527ACA8223EB57A800D775E0 /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 527ACA8123EB57A800D775E0 /* ImageKit */; };
 		527ACA8A23EB58A000D775E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA8923EB58A000D775E0 /* TabBarController.swift */; };
 		527ACA8C23EB58C100D775E0 /* BestSellerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA8B23EB58C100D775E0 /* BestSellerCell.swift */; };
 		527ACA8E23EB58CF00D775E0 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA8D23EB58CF00D775E0 /* FavoritesCell.swift */; };
@@ -45,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		026F36F123F5B66B00980EF7 /* FavoritesDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailController.swift; sourceTree = "<group>"; };
+		026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailView.swift; sourceTree = "<group>"; };
+		026F36F723F5B75700980EF7 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
+		026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIClient.swift; sourceTree = "<group>"; };
 		52282B5323F4EB5F0092453D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		52282B5523F4EBE80092453D /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
 		41BE1A85E1297F9906D1E3EE /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				527ACA8223EB57A800D775E0 /* BuildFile in Frameworks */,
+				527ACA8223EB57A800D775E0 /* ImageKit in Frameworks */,
 				FD32E43C25B1964409377182 /* Pods_NYTimesBestSeller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +117,6 @@
 				BAB692AC75CC5F65F59710C2 /* Pods-NYTimesBestSellerTests.debug.xcconfig */,
 				B0E09CF90BA9FDFF0804556F /* Pods-NYTimesBestSellerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				527ACAA123EB596300D775E0 /* NYTAPIClient.swift */,
+				026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */,
 				52282B5523F4EBE80092453D /* CategoryAPI.swift */,
 			);
 			path = "Api Client";
@@ -165,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				527ACA9F23EB594F00D775E0 /* NYBestSellerModel.swift */,
+				026F36F723F5B75700980EF7 /* GoogleModel.swift */,
 				52282B5323F4EB5F0092453D /* CategoryModel.swift */,
 			);
 			path = Model;
@@ -175,6 +185,7 @@
 			children = (
 				527ACA9723EB592100D775E0 /* BestSellerView.swift */,
 				527ACA9923EB592D00D775E0 /* FavoritesView.swift */,
+				026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */,
 				527ACA9B23EB593800D775E0 /* SettingsView.swift */,
 				527ACA9D23EB594100D775E0 /* DetailView.swift */,
 			);
@@ -186,6 +197,7 @@
 			children = (
 				527ACA8F23EB58EB00D775E0 /* BestSellerViewController.swift */,
 				527ACA9123EB58F400D775E0 /* FavoritesViewController.swift */,
+				026F36F123F5B66B00980EF7 /* FavoritesDetailController.swift */,
 				527ACA9323EB58FC00D775E0 /* DetailViewController.swift */,
 				527ACA9523EB590300D775E0 /* SettingsViewController.swift */,
 			);
@@ -254,7 +266,7 @@
 			);
 			name = NYTimesBestSeller;
 			packageProductDependencies = (
-				527ACA8123EB57A800D775E0 /* SwiftPackageProductDependency */,
+				527ACA8123EB57A800D775E0 /* ImageKit */,
 			);
 			productName = NYTimesBestSeller;
 			productReference = 527ACA6923EB56F700D775E0 /* NYTimesBestSeller.app */;
@@ -308,7 +320,7 @@
 			);
 			mainGroup = 527ACA6023EB56F700D775E0;
 			packageReferences = (
-				527ACA8023EB57A800D775E0 /* RemoteSwiftPackageReference */,
+				527ACA8023EB57A800D775E0 /* XCRemoteSwiftPackageReference "ImageKit" */,
 			);
 			productRefGroup = 527ACA6A23EB56F700D775E0 /* Products */;
 			projectDirPath = "";
@@ -412,7 +424,11 @@
 				527ACAA223EB596300D775E0 /* NYTAPIClient.swift in Sources */,
 				527ACA7123EB56F700D775E0 /* ViewController.swift in Sources */,
 				527ACAA023EB594F00D775E0 /* NYBestSellerModel.swift in Sources */,
+				026F36F423F5B6BB00980EF7 /* FavoritesDetailView.swift in Sources */,
+				026F36F223F5B66B00980EF7 /* FavoritesDetailController.swift in Sources */,
+				026F36F823F5B75700980EF7 /* GoogleModel.swift in Sources */,
 				527ACA8A23EB58A000D775E0 /* TabBarController.swift in Sources */,
+				026F36FA23F5B7CF00980EF7 /* GoogleAPIClient.swift in Sources */,
 				527ACA9E23EB594100D775E0 /* DetailView.swift in Sources */,
 				527ACA9623EB590300D775E0 /* SettingsViewController.swift in Sources */,
 				52282B5423F4EB5F0092453D /* CategoryModel.swift in Sources */,
@@ -687,7 +703,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		527ACA8023EB57A800D775E0 /* RemoteSwiftPackageReference */ = {
+		527ACA8023EB57A800D775E0 /* XCRemoteSwiftPackageReference "ImageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexpaul/ImageKit.git";
 			requirement = {
@@ -698,9 +714,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		527ACA8123EB57A800D775E0 /* SwiftPackageProductDependency */ = {
+		527ACA8123EB57A800D775E0 /* ImageKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 527ACA8023EB57A800D775E0 /* RemoteSwiftPackageReference */;
+			package = 527ACA8023EB57A800D775E0 /* XCRemoteSwiftPackageReference "ImageKit" */;
 			productName = ImageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
