@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52282B5423F4EB5F0092453D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5323F4EB5F0092453D /* CategoryModel.swift */; };
+		52282B5623F4EBE80092453D /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5523F4EBE80092453D /* CategoryAPI.swift */; };
 		527ACA6D23EB56F700D775E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA6C23EB56F700D775E0 /* AppDelegate.swift */; };
 		527ACA6F23EB56F700D775E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA6E23EB56F700D775E0 /* SceneDelegate.swift */; };
 		527ACA7123EB56F700D775E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA7023EB56F700D775E0 /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52282B5323F4EB5F0092453D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		52282B5523F4EBE80092453D /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
 		527ACA6923EB56F700D775E0 /* NYTimesBestSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesBestSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527ACA6C23EB56F700D775E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527ACA6E23EB56F700D775E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				527ACAA123EB596300D775E0 /* NYTAPIClient.swift */,
+				52282B5523F4EBE80092453D /* CategoryAPI.swift */,
 			);
 			path = "Api Client";
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				527ACA9F23EB594F00D775E0 /* NYBestSellerModel.swift */,
+				52282B5323F4EB5F0092453D /* CategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				527ACA8A23EB58A000D775E0 /* TabBarController.swift in Sources */,
 				527ACA9E23EB594100D775E0 /* DetailView.swift in Sources */,
 				527ACA9623EB590300D775E0 /* SettingsViewController.swift in Sources */,
+				52282B5423F4EB5F0092453D /* CategoryModel.swift in Sources */,
 				527ACA9223EB58F400D775E0 /* FavoritesViewController.swift in Sources */,
 				527ACA6D23EB56F700D775E0 /* AppDelegate.swift in Sources */,
 				527ACA9823EB592100D775E0 /* BestSellerView.swift in Sources */,
@@ -318,6 +325,7 @@
 				527ACA9023EB58EB00D775E0 /* BestSellerViewController.swift in Sources */,
 				527ACA8E23EB58CF00D775E0 /* FavoritesCell.swift in Sources */,
 				527ACAB323EB5B7800D775E0 /* SecretKeys.swift in Sources */,
+				52282B5623F4EBE80092453D /* CategoryAPI.swift in Sources */,
 				527ACA9C23EB593800D775E0 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
