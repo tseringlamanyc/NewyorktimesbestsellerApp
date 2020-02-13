@@ -7,7 +7,71 @@
 //
 
 import UIKit
+import ImageKit
 
 class BestSellerCell: UICollectionViewCell {
+    
+    public lazy var booksImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    public lazy var descriptionLabel: UILabel = {
+       let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        setupImage()
+        setupLabel()
+    }
+    
+    private func setupImage() {
+        addSubview(booksImage)
+        booksImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            booksImage.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            booksImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            booksImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.60),
+            booksImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
+        ])
+    }
+    
+    private func setupLabel() {
+        addSubview(descriptionLabel)
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: booksImage.bottomAnchor, constant: 8),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            descriptionLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.30)
+        ])
+    }
+    
+    public func updateCell(book: Book) {
+        descriptionLabel.text = book.description
+        booksImage.getImage(with: book.bookImage) { [weak self](result) in
+            switch result {
+            case .failure(_):
+                print("couldnt load image")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.booksImage.image = image
+                }
+            }
+        }
+    }
     
 }

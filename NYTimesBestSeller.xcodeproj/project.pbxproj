@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		026F36F223F5B66B00980EF7 /* FavoritesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F123F5B66B00980EF7 /* FavoritesDetailController.swift */; };
 		026F36F423F5B6BB00980EF7 /* FavoritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */; };
 		026F36F823F5B75700980EF7 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F723F5B75700980EF7 /* GoogleModel.swift */; };
 		026F36FA23F5B7CF00980EF7 /* GoogleAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */; };
+		52282B5423F4EB5F0092453D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5323F4EB5F0092453D /* CategoryModel.swift */; };
+		52282B5623F4EBE80092453D /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5523F4EBE80092453D /* CategoryAPI.swift */; };
 		527ACA6D23EB56F700D775E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA6C23EB56F700D775E0 /* AppDelegate.swift */; };
 		527ACA6F23EB56F700D775E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA6E23EB56F700D775E0 /* SceneDelegate.swift */; };
 		527ACA7123EB56F700D775E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA7023EB56F700D775E0 /* ViewController.swift */; };
@@ -51,6 +54,8 @@
 		026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailView.swift; sourceTree = "<group>"; };
 		026F36F723F5B75700980EF7 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
 		026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIClient.swift; sourceTree = "<group>"; };
+		52282B5323F4EB5F0092453D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		52282B5523F4EBE80092453D /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
 		41BE1A85E1297F9906D1E3EE /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
 		527ACA6923EB56F700D775E0 /* NYTimesBestSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesBestSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527ACA6C23EB56F700D775E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +165,7 @@
 			children = (
 				527ACAA123EB596300D775E0 /* NYTAPIClient.swift */,
 				026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */,
+				52282B5523F4EBE80092453D /* CategoryAPI.swift */,
 			);
 			path = "Api Client";
 			sourceTree = "<group>";
@@ -169,6 +175,7 @@
 			children = (
 				527ACA9F23EB594F00D775E0 /* NYBestSellerModel.swift */,
 				026F36F723F5B75700980EF7 /* GoogleModel.swift */,
+				52282B5323F4EB5F0092453D /* CategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -424,6 +431,7 @@
 				026F36FA23F5B7CF00980EF7 /* GoogleAPIClient.swift in Sources */,
 				527ACA9E23EB594100D775E0 /* DetailView.swift in Sources */,
 				527ACA9623EB590300D775E0 /* SettingsViewController.swift in Sources */,
+				52282B5423F4EB5F0092453D /* CategoryModel.swift in Sources */,
 				527ACA9223EB58F400D775E0 /* FavoritesViewController.swift in Sources */,
 				527ACA6D23EB56F700D775E0 /* AppDelegate.swift in Sources */,
 				527ACA9823EB592100D775E0 /* BestSellerView.swift in Sources */,
@@ -433,6 +441,7 @@
 				527ACA9023EB58EB00D775E0 /* BestSellerViewController.swift in Sources */,
 				527ACA8E23EB58CF00D775E0 /* FavoritesCell.swift in Sources */,
 				527ACAB323EB5B7800D775E0 /* SecretKeys.swift in Sources */,
+				52282B5623F4EBE80092453D /* CategoryAPI.swift in Sources */,
 				527ACA9C23EB593800D775E0 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
