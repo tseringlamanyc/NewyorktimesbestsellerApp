@@ -48,7 +48,7 @@ class FavoritesDetailController: UIViewController {
             return
         }
         
-        NYTAPIClient.getGoogleBooks(for: isbn) { [weak self] (result) in
+        GoogleAPIClient.getGoogleBooks(for: isbn) { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 print("error: \(appError)")
