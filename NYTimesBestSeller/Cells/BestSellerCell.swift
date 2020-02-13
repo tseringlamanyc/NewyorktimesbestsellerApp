@@ -62,7 +62,7 @@ class BestSellerCell: UICollectionViewCell {
     
     public func updateCell(book: Book) {
         descriptionLabel.text = book.description
-        booksImage.getImage(with: book.book_image) { [weak self](result) in
+        booksImage.getImage(with: book.bookImage) { [weak self](result) in
             switch result {
             case .failure(_):
                 print("couldnt load image")
