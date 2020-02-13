@@ -44,6 +44,9 @@ struct Book: Codable & Equatable {
     //    "contributor": "by Jeanine Cummins",
     //    "contributor_note": "",
     let bookImage: String
+    let primaryIsbn10: String
+    let bookReviewLink: String
+    let buyLinks: [Link]
     
     private enum CodingKeys: String, CodingKey {
         case rank
@@ -54,7 +57,15 @@ struct Book: Codable & Equatable {
         case title
         case author
         case bookImage = "book_image"
+        case primaryIsbn10 = "primary_isbn10"
+        case bookReviewLink = "book_review_link"
+        case buyLinks = "buy_links"
     }
+}
+
+struct Link: Codable & Equatable {
+    let name: String
+    let url: String
 }
 
 
