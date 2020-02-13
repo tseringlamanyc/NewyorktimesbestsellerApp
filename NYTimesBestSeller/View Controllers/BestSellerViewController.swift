@@ -36,8 +36,12 @@ class BestSellerViewController: UIViewController {
         }
     }
     
-    var nowBook = "Animals"
-    
+    var nowBook = "Animals" {
+        didSet {
+            getBooks(category: nowBook)
+        }
+    }
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -115,9 +119,10 @@ extension BestSellerViewController: UIPickerViewDataSource {
         return sections.count
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let sectionName = sections[row]
+        nowBook = sectionName
+    }
     
 }
 extension BestSellerViewController: UIPickerViewDelegate {
