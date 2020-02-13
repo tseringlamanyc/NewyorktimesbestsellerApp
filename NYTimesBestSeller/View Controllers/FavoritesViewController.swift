@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DataPersistence
 
 class FavoritesViewController: UIViewController {
     
@@ -17,19 +18,31 @@ class FavoritesViewController: UIViewController {
             DispatchQueue.main.async {
                 self.listView.geminiCollectionView.reloadData()
             }
+//            listView.geminiCollectionView.reloadData()
+//            if books.isEmpty {
+//                listView.geminiCollectionView.backgroundView = EmptyView(title: "Favorited Books", message: "There are currently no saved books in your favorites collection. Start browsing by tapping on the Books Icon.")
+//            } else {
+//                listView.geminiCollectionView.backgroundView = nil
+//            }
         }
     }
+    
     
     override func loadView() {
         view = listView
     }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        super.viewWillAppear(true)
-    //
-    //        listView.geminiCollectionView.alpha = 1
-    //        loadBooks()
-    //    }
+    private var dataPersistence: DataPersistence<Book>
+    
+    init(_ dataPersistence: DataPersistence<Book>) {
+        self.dataPersistence = dataPersistence
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +98,14 @@ class FavoritesViewController: UIViewController {
         }
     }
     
+    private func getSavedBooks() {
+        do {
+            books = try dataPersistence.loadItems()
+        } catch {
+            showAlert(title: "Oops", message: "Could not load your saved books")
+        }
+    }
+    
     private func addBackgroundGradient() {
         let collectionViewBackgroundView = UIView()
         let gradientLayer = CAGradientLayer()
@@ -120,10 +141,12 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
         print("cell\(indexPath.row)")
         cell.selectedView.isHidden = true
         //cell.bookImageView.isHidden = true
-        let bookDetailVC = FavoritesDetailController()
-        //        navigationController?.pushViewController(bookDetailVC, animated: true)
         let book = books[indexPath.row]
-        bookDetailVC.selectedBook = book
+        
+        let bookDetailVC = FavoritesDetailController(dataPersistence, book: book)
+        //        navigationController?.pushViewController(bookDetailVC, animated: true)
+
+//        bookDetailVC.selectedBook = book
         
         self.present(bookDetailVC, animated: true)
         

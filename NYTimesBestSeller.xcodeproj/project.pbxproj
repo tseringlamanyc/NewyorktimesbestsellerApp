@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
+		0220AFBF23F5F1EC0064CB53 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0220AFBE23F5F1EC0064CB53 /* EmptyView.swift */; };
 		026F36F223F5B66B00980EF7 /* FavoritesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F123F5B66B00980EF7 /* FavoritesDetailController.swift */; };
 		026F36F423F5B6BB00980EF7 /* FavoritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */; };
 		026F36F823F5B75700980EF7 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F723F5B75700980EF7 /* GoogleModel.swift */; };
@@ -50,13 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0220AFBE23F5F1EC0064CB53 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		026F36F123F5B66B00980EF7 /* FavoritesDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailController.swift; sourceTree = "<group>"; };
 		026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailView.swift; sourceTree = "<group>"; };
 		026F36F723F5B75700980EF7 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
 		026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIClient.swift; sourceTree = "<group>"; };
+		41BE1A85E1297F9906D1E3EE /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
 		52282B5323F4EB5F0092453D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		52282B5523F4EBE80092453D /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
-		41BE1A85E1297F9906D1E3EE /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
 		527ACA6923EB56F700D775E0 /* NYTimesBestSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesBestSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527ACA6C23EB56F700D775E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527ACA6E23EB56F700D775E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 				026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */,
 				527ACA9B23EB593800D775E0 /* SettingsView.swift */,
 				527ACA9D23EB594100D775E0 /* DetailView.swift */,
+				0220AFBE23F5F1EC0064CB53 /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +426,7 @@
 				527ACAA223EB596300D775E0 /* NYTAPIClient.swift in Sources */,
 				527ACA7123EB56F700D775E0 /* ViewController.swift in Sources */,
 				527ACAA023EB594F00D775E0 /* NYBestSellerModel.swift in Sources */,
+				0220AFBF23F5F1EC0064CB53 /* EmptyView.swift in Sources */,
 				026F36F423F5B6BB00980EF7 /* FavoritesDetailView.swift in Sources */,
 				026F36F223F5B66B00980EF7 /* FavoritesDetailController.swift in Sources */,
 				026F36F823F5B75700980EF7 /* GoogleModel.swift in Sources */,
