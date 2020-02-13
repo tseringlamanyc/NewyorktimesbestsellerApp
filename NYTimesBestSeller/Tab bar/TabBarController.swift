@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import DataPersistence
 
 class TabBarController: UITabBarController {
     
-    private var bestSellerVC: BestSellerViewController = {
-       let vc = BestSellerViewController()
+    public var dataPersistence = DataPersistence<Book>(filename: "savedBooks.plist")
+    
+    private lazy var bestSellerVC: BestSellerViewController = {
+        let vc = BestSellerViewController()
         vc.tabBarItem = UITabBarItem(title: "Best Seller", image: UIImage(systemName: "book.circle"), tag: 0)
         return vc
     }()
     
-    private var favoritesVC: FavoritesViewController = {
-       let vc = FavoritesViewController()
+    private lazy var favoritesVC: FavoritesViewController = {
+        let vc = FavoritesViewController(dataPersistence)
         vc.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         return vc
     }()
-
-    private var settingVC: SettingsViewController = {
+    
+    private lazy var settingVC: SettingsViewController = {
         let vc = SettingsViewController()
-        vc.tabBarItem = UITabBarItem(title: "3", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+        vc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         return vc
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [bestSellerVC, favoritesVC, settingVC]
+        viewControllers = [UINavigationController(rootViewController: bestSellerVC), UINavigationController(rootViewController: favoritesVC), settingVC]
     }
 }

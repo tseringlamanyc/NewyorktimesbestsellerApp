@@ -16,9 +16,9 @@ class FavoritesDetailView: UIView {
         let sv = UIScrollView(frame: .zero)
         sv.frame = self.bounds
         sv.contentSize = CGSize(width: (self.frame.width * 0.75), height: (self.frame.height * 0.658))
-        sv.layer.borderWidth = 4
-        sv.layer.borderColor = UIColor.lightText.cgColor
-        sv.backgroundColor = .placeholderText
+        //        sv.layer.borderWidth = 4
+        //        sv.layer.borderColor = UIColor.lightText.cgColor
+        sv.backgroundColor = .systemBackground
         return sv
     }()
     
@@ -29,9 +29,8 @@ class FavoritesDetailView: UIView {
         //                centeredV.layer.borderWidth = 4
         //        centeredV.layer.borderColor = UIColor.lightText.cgColor
         //        centeredV.backgroundColor = .systemGray6
-        centeredV.isOpaque = false
         //        centeredV.backgroundColor = .quaternarySystemFill
-        centeredV.alpha = 0.9
+        //        centeredV.alpha = 0.9
         return centeredV
     }()
     
@@ -46,7 +45,7 @@ class FavoritesDetailView: UIView {
         let label = UILabel()
         label.numberOfLines = 3
         label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.textColor = .white
+//        label.textColor = .white
         label.text = ""
         return label
     }()
@@ -89,8 +88,8 @@ class FavoritesDetailView: UIView {
     public lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.textColor = .white
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+//        label.textColor = .white
         label.text = ""
         return label
     }()
@@ -126,7 +125,7 @@ class FavoritesDetailView: UIView {
         
         NSLayoutConstraint.activate([
             scrollView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            scrollView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            scrollView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10),
             scrollView.widthAnchor.constraint(equalToConstant: width),
             scrollView.heightAnchor.constraint(equalToConstant: height)
         ])
@@ -136,8 +135,6 @@ class FavoritesDetailView: UIView {
         scrollView.addSubview(centerView)
         centerView.translatesAutoresizingMaskIntoConstraints = false
         centerView.layer.cornerRadius = 10
-        //        let width = self.bounds.width / 1.15
-        //        let height = self.bounds.height / 1.35
         
         NSLayoutConstraint.activate([
             centerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),

@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import DataPersistence
 
 class FavoritesDetailController: UIViewController {
     
@@ -19,8 +20,21 @@ class FavoritesDetailController: UIViewController {
     
     private var googleBook = [GoogleBook]()
     
-    public var selectedBook: Book?
-    public var booksIsbn: String?
+    private var dataPersistence: DataPersistence<Book>
+    
+    private var selectedBook: Book
+    
+//    public var booksIsbn: String?
+    
+    init(_ dataPersistence: DataPersistence<Book>, book: Book) {
+        self.dataPersistence = dataPersistence
+        self.selectedBook = book
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func viewDidLoad() {
@@ -31,10 +45,11 @@ class FavoritesDetailController: UIViewController {
         
         loadBooks()
         updateBookImage()
-        //        self.preferredContentSize = CGSize(width: 100, height: 100)
-        //        createTheView()
         updateUI()
     }
+    
+    
+    
     private var googleTitle = "" {
         didSet {
             print(googleTitle)
@@ -44,17 +59,17 @@ class FavoritesDetailController: UIViewController {
     
     private func loadBooks() {
         
-        guard let isbn = selectedBook?.primaryIsbn10 else {
-            return
-        }
+//        guard let isbn = selectedBook?.primaryIsbn10 else {
+//            return
+//        }
         
-        GoogleAPIClient.getGoogleBooks(for: isbn) { [weak self] (result) in
+        GoogleAPIClient.getGoogleBooks(for: selectedBook.primaryIsbn10) { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 print("error: \(appError)")
             case .success(let bookArr):
-                self?.googleBook = bookArr
-                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
+//                self?.googleBook = bookArr
+//                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
                 DispatchQueue.main.async {
                     self?.modallView.descriptionLabel.text = bookArr.first?.volumeInfo.description ?? "N/A"
                     self?.modallView.bookTitle.text = bookArr.first?.volumeInfo.title ?? "N/A"
@@ -65,18 +80,12 @@ class FavoritesDetailController: UIViewController {
     }
     
     private func updateUI() {
-        guard let book = selectedBook else {
-            return
-        }
-        //        if title.lowercased() == googleTitle.lowercased() {
-        //            print("THEYRE EQUAL")
-        //            DispatchQueue.main.async {
-        //                self.modallView.bookTitle.text = self.googleTitle
-        //            }
-        //
-        //        } else {
-        //            print("ERRRRRGHHHH")
-        //        }
+//        guard let book = selectedBook else {
+//            return
+//        }
+        
+        let book = selectedBook
+        
         DispatchQueue.main.async {
             self.modallView.rankLabel.text = "Rank: \(book.rank)"
             self.modallView.byLine.text = book.contributor
@@ -91,7 +100,9 @@ class FavoritesDetailController: UIViewController {
     
     private func updateBookImage() {
         
-        guard let book = selectedBook else { return }
+//        guard let book = selectedBook else { return }
+        
+        let book = selectedBook
         
         modallView.bookImageView.getImage(with: book.bookImage) {[weak self] (result) in
             switch result {
@@ -113,7 +124,7 @@ class FavoritesDetailController: UIViewController {
         present(alertController, animated: true)
         
         let timesReviewAction = UIAlertAction(title: "NYT Review", style: .default) { [weak self] alertAction in
-            let nytWebString = self?.selectedBook?.bookReviewLink
+            let nytWebString = self?.selectedBook.bookReviewLink
             guard let url = URL(string: nytWebString ?? "") else {
                 if nytWebString == "" {
                     self?.showAlert(title: "Sorry", message: "The New York Times has yet to review this book.")
