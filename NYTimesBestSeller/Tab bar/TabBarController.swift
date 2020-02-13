@@ -24,7 +24,7 @@ class TabBarController: UITabBarController {
 
     private var settingVC: SettingsViewController = {
         let vc = SettingsViewController()
-        vc.tabBarItem = UITabBarItem(title: "3", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+        vc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         return vc
     }()
     

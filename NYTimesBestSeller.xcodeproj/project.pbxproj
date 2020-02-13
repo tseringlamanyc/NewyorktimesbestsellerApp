@@ -14,7 +14,7 @@
 		527ACA7123EB56F700D775E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA7023EB56F700D775E0 /* ViewController.swift */; };
 		527ACA7623EB56FA00D775E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527ACA7523EB56FA00D775E0 /* Assets.xcassets */; };
 		527ACA7923EB56FA00D775E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527ACA7723EB56FA00D775E0 /* LaunchScreen.storyboard */; };
-		527ACA8223EB57A800D775E0 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 527ACA8123EB57A800D775E0 /* SwiftPackageProductDependency */; };
+		527ACA8223EB57A800D775E0 /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 527ACA8123EB57A800D775E0 /* ImageKit */; };
 		527ACA8A23EB58A000D775E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA8923EB58A000D775E0 /* TabBarController.swift */; };
 		527ACA8C23EB58C100D775E0 /* BestSellerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA8B23EB58C100D775E0 /* BestSellerCell.swift */; };
 		527ACA8E23EB58CF00D775E0 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA8D23EB58CF00D775E0 /* FavoritesCell.swift */; };
@@ -31,6 +31,7 @@
 		527ACAAA23EB59CC00D775E0 /* NYTimesBestSellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACAA923EB59CC00D775E0 /* NYTimesBestSellerTests.swift */; };
 		527ACAB323EB5B7800D775E0 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACAB223EB5B7800D775E0 /* SecretKeys.swift */; };
 		92A6F3769A89FACEC3501AD3 /* Pods_NYTimesBestSellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767867815496827C15C53759 /* Pods_NYTimesBestSellerTests.framework */; };
+		9FE47DDD23F5CBCF003505B0 /* UserPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE47DDC23F5CBCF003505B0 /* UserPreference.swift */; };
 		FD32E43C25B1964409377182 /* Pods_NYTimesBestSeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA887FED62D4780E539D923E /* Pods_NYTimesBestSeller.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41BE1A85E1297F9906D1E3EE /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
 		52282B5323F4EB5F0092453D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		52282B5523F4EBE80092453D /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
-		41BE1A85E1297F9906D1E3EE /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
 		527ACA6923EB56F700D775E0 /* NYTimesBestSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesBestSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527ACA6C23EB56F700D775E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527ACA6E23EB56F700D775E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		527ACAAB23EB59CC00D775E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527ACAB223EB5B7800D775E0 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		767867815496827C15C53759 /* Pods_NYTimesBestSellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYTimesBestSellerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FE47DDC23F5CBCF003505B0 /* UserPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreference.swift; sourceTree = "<group>"; };
 		AEE17002FD76303C79CC4F55 /* Pods-NYTimesBestSeller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.debug.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E09CF90BA9FDFF0804556F /* Pods-NYTimesBestSellerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSellerTests.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSellerTests/Pods-NYTimesBestSellerTests.release.xcconfig"; sourceTree = "<group>"; };
 		BAB692AC75CC5F65F59710C2 /* Pods-NYTimesBestSellerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSellerTests.debug.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSellerTests/Pods-NYTimesBestSellerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				527ACA8223EB57A800D775E0 /* BuildFile in Frameworks */,
+				527ACA8223EB57A800D775E0 /* ImageKit in Frameworks */,
 				FD32E43C25B1964409377182 /* Pods_NYTimesBestSeller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +110,6 @@
 				BAB692AC75CC5F65F59710C2 /* Pods-NYTimesBestSellerTests.debug.xcconfig */,
 				B0E09CF90BA9FDFF0804556F /* Pods-NYTimesBestSellerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -166,6 +167,7 @@
 			children = (
 				527ACA9F23EB594F00D775E0 /* NYBestSellerModel.swift */,
 				52282B5323F4EB5F0092453D /* CategoryModel.swift */,
+				9FE47DDC23F5CBCF003505B0 /* UserPreference.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,7 +256,7 @@
 			);
 			name = NYTimesBestSeller;
 			packageProductDependencies = (
-				527ACA8123EB57A800D775E0 /* SwiftPackageProductDependency */,
+				527ACA8123EB57A800D775E0 /* ImageKit */,
 			);
 			productName = NYTimesBestSeller;
 			productReference = 527ACA6923EB56F700D775E0 /* NYTimesBestSeller.app */;
@@ -308,7 +310,7 @@
 			);
 			mainGroup = 527ACA6023EB56F700D775E0;
 			packageReferences = (
-				527ACA8023EB57A800D775E0 /* RemoteSwiftPackageReference */,
+				527ACA8023EB57A800D775E0 /* XCRemoteSwiftPackageReference "ImageKit" */,
 			);
 			productRefGroup = 527ACA6A23EB56F700D775E0 /* Products */;
 			projectDirPath = "";
@@ -421,6 +423,7 @@
 				527ACA9823EB592100D775E0 /* BestSellerView.swift in Sources */,
 				527ACA6F23EB56F700D775E0 /* SceneDelegate.swift in Sources */,
 				527ACA9A23EB592D00D775E0 /* FavoritesView.swift in Sources */,
+				9FE47DDD23F5CBCF003505B0 /* UserPreference.swift in Sources */,
 				527ACA8C23EB58C100D775E0 /* BestSellerCell.swift in Sources */,
 				527ACA9023EB58EB00D775E0 /* BestSellerViewController.swift in Sources */,
 				527ACA8E23EB58CF00D775E0 /* FavoritesCell.swift in Sources */,
@@ -687,7 +690,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		527ACA8023EB57A800D775E0 /* RemoteSwiftPackageReference */ = {
+		527ACA8023EB57A800D775E0 /* XCRemoteSwiftPackageReference "ImageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexpaul/ImageKit.git";
 			requirement = {
@@ -698,9 +701,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		527ACA8123EB57A800D775E0 /* SwiftPackageProductDependency */ = {
+		527ACA8123EB57A800D775E0 /* ImageKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 527ACA8023EB57A800D775E0 /* RemoteSwiftPackageReference */;
+			package = 527ACA8023EB57A800D775E0 /* XCRemoteSwiftPackageReference "ImageKit" */;
 			productName = ImageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
