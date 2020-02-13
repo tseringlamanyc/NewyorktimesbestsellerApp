@@ -95,8 +95,6 @@ class FavoritesViewController: UIViewController {
         listView.geminiCollectionView.backgroundView = collectionViewBackgroundView
         listView.geminiCollectionView.backgroundView?.layer.addSublayer(gradientLayer)
     }
-    
-    
 }
 
 
