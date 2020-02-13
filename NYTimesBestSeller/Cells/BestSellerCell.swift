@@ -8,18 +8,22 @@
 
 import UIKit
 import ImageKit
+import Gemini
 
-class BestSellerCell: UICollectionViewCell {
+class BestSellerCell: GeminiCell {
+    
+    private var googleBook = [GoogleBook]()
+    
     
     public lazy var booksImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true 
         return imageView
     }()
     
     public lazy var descriptionLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.numberOfLines = 0
         return label
     }()
@@ -62,7 +66,20 @@ class BestSellerCell: UICollectionViewCell {
     }
     
     public func updateCell(book: Book) {
-        descriptionLabel.text = book.description
+        
+        GoogleAPIClient.getGoogleBooks(for: book.primaryIsbn10) { [weak self] (result) in
+            switch result {
+            case .failure(_):
+                print("no description")
+            case .success(let googleBook):
+                DispatchQueue.main.async {
+                    self?.googleBook = googleBook
+                    self?.descriptionLabel.text = googleBook.first?.volumeInfo.description
+                }
+            }
+        }
+        
+        
         booksImage.getImage(with: book.bookImage) { [weak self](result) in
             switch result {
             case .failure(_):

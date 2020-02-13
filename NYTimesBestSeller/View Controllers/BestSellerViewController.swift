@@ -52,6 +52,16 @@ class BestSellerViewController: UIViewController {
         bestSellerView.pickerView.delegate = self
         getCategories()
         getBooks(category: nowBook)
+//        bestSellerView.bestSellerCV.gemini.circleRotationAnimation().radius(450).rotateDirection(.anticlockwise).itemRotationEnabled(false)
+        bestSellerView.bestSellerCV.gemini
+        .customAnimation()
+            .translation(x: 50, y: 50, z: 50)
+            .rotationAngle(x: 0, y: 10, z: 0)
+        .ease(.easeOutExpo)
+        .shadowEffect(.fadeIn)
+        .maxShadowAlpha(0.3)
+        
+
     }
     
     private func getCategories() {
@@ -94,6 +104,11 @@ extension BestSellerViewController: UICollectionViewDataSource {
         cell.backgroundColor = .systemBackground
         return cell
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        bestSellerView.bestSellerCV.animateVisibleCells()
+        bestSellerView.bestSellerCV.alpha = 1
+    }
 }
 
 extension BestSellerViewController: UICollectionViewDelegateFlowLayout {
@@ -129,4 +144,10 @@ extension BestSellerViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sections[row]
     }
+}
+
+extension BestSellerViewController: UserPreferenceDelegate {
+  func didChangeNewsSection(_ userPreference: UserPreference, sectionName: String) {
+    getBooks(category: sectionName)
+  }
 }
