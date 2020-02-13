@@ -29,6 +29,16 @@ class DetailView: UIView {
                 return label
             }()
     
+    public lazy var summary: UILabel = {
+        let summaryLabel = UILabel()
+        summaryLabel.numberOfLines = 3
+        summaryLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        summaryLabel.text = "Description"
+        summaryLabel.textAlignment = .center
+        return summaryLabel
+        
+    }()
+    
           
           override init(frame: CGRect) {
               super.init(frame: UIScreen.main.bounds)
@@ -43,6 +53,7 @@ class DetailView: UIView {
           private func commonInit() {
               setUpWewsImageView()
               setUpAbstractHeadline()
+            setupSummaryLabel()
       }
       
       private func setUpWewsImageView(){
@@ -66,11 +77,28 @@ class DetailView: UIView {
           
           NSLayoutConstraint.activate([
               abstractHeadline.topAnchor.constraint(equalTo: newsImageView.bottomAnchor, constant: 8),
+              
               abstractHeadline.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+              
               abstractHeadline.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
               
           ])
           
       }
+    
+    private func setupSummaryLabel(){
+        addSubview(summary)
+        
+        summary.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            summary.topAnchor.constraint(equalTo: abstractHeadline.bottomAnchor, constant: 8),
+            
+            summary.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            
+            summary.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
+        
+        ])
+    }
 
 }
