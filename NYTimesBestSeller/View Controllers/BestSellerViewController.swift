@@ -130,3 +130,9 @@ extension BestSellerViewController: UIPickerViewDelegate {
         return sections[row]
     }
 }
+
+extension BestSellerViewController: UserPreferenceDelegate {
+  func didChangeNewsSection(_ userPreference: UserPreference, sectionName: String) {
+    getBooks(category: sectionName)
+  }
+}
