@@ -7,7 +7,8 @@
 //
 
 import UIKit
+import Gemini
 
-class FavoritesCell: UICollectionViewCell {
+class FavoritesCell: GeminiCell {
     
 }

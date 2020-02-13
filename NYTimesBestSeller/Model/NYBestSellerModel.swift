@@ -8,21 +8,34 @@
 
 import Foundation
 
-struct BookSearch: Codable {
-    let last_modified: String
+struct BookSearch: Codable & Equatable {
+    let lastModified: String
     let results: BookResult
+    private enum CodingKeys: String, CodingKey {
+        case lastModified = "last_modified"
+        case results
+    }
 }
 
-struct BookResult: Codable {
-    let list_name: String
-    let list_name_encoded: String
+struct BookResult: Codable & Equatable {
+    let listName: String
+    let listNameEncoded: String
     let books: [Book]
+    let bestsellersDate: String
+    let publishedDate: String
+    private enum CodingKeys: String, CodingKey {
+        case listName = "list_name"
+        case listNameEncoded = "list_name_encoded"
+        case books
+        case bestsellersDate = "bestsellers_date"
+        case publishedDate = "published_date"
+    }
 }
 
-struct Book: Codable {
+struct Book: Codable & Equatable {
     let rank: Int
-    let rank_last_week: Int
-    let weeks_on_list: Int
+    let rankLastWeek: Int
+    let weeksOnList: Int
     
     let description: String
     let price: Int
@@ -30,7 +43,29 @@ struct Book: Codable {
     let author: String
     //    "contributor": "by Jeanine Cummins",
     //    "contributor_note": "",
-    let book_image: String
+    let bookImage: String
+    let primaryIsbn10: String
+    let bookReviewLink: String
+    let buyLinks: [Link]
+    
+    private enum CodingKeys: String, CodingKey {
+        case rank
+        case rankLastWeek = "rank_last_week"
+        case weeksOnList = "weeks_on_list"
+        case description
+        case price
+        case title
+        case author
+        case bookImage = "book_image"
+        case primaryIsbn10 = "primary_isbn10"
+        case bookReviewLink = "book_review_link"
+        case buyLinks = "buy_links"
+    }
+}
+
+struct Link: Codable & Equatable {
+    let name: String
+    let url: String
 }
 
 
