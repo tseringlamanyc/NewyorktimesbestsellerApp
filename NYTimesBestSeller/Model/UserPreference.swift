@@ -10,10 +10,12 @@ import Foundation
 
 struct UserKey {
   static let sectionName = "News Section"
+  static let sectionIndex = "Picker Index"
 }
 
 protocol UserPreferenceDelegate: AnyObject {
   func didChangeNewsSection(_ userPreference: UserPreference, sectionName: String)
+    func didIndexChange(_ userPreference: UserPreference, index: Int)
 }
 
 final class UserPreference {
@@ -27,5 +29,14 @@ final class UserPreference {
     UserDefaults.standard.set(sectionName, forKey: UserKey.sectionName)
     delegate?.didChangeNewsSection(self, sectionName: sectionName)
   }
+    
+    public func getIndex() -> Int? {
+        return UserDefaults.standard.object(forKey: UserKey.sectionIndex) as? Int
+    }
+    
+    public func setIndex(_ index: Int) {
+        UserDefaults.standard.set(index, forKey: UserKey.sectionIndex)
+        delegate?.didIndexChange(self, index: index)
+    }
 }
 

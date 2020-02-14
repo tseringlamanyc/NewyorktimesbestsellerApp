@@ -80,6 +80,7 @@ extension SettingsViewController: UIPickerViewDelegate {
     // store the current selected news section in user defaults
     let sectionName = sections[row]
     userPreference.setSectionName(sectionName)
+    userPreference.setIndex(row)
   }
 }
 

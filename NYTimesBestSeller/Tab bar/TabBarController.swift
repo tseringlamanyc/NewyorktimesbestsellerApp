@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
     private var userPreference = UserPreference()
     
     private lazy var bestSellerVC: BestSellerViewController = {
-        let vc = BestSellerViewController(dataPersistence: dataPersistence)
+        let vc = BestSellerViewController(dataPersistence: dataPersistence, userPreference: userPreference)
         vc.tabBarItem = UITabBarItem(title: "Best Seller", image: UIImage(systemName: "book.circle"), tag: 0)
         return vc
     }()
