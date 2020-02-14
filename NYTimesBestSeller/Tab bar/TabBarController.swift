@@ -17,7 +17,6 @@ class TabBarController: UITabBarController {
     
     private lazy var bestSellerVC: BestSellerViewController = {
         let vc = BestSellerViewController(dataPersistence: dataPersistence)
-        
         vc.tabBarItem = UITabBarItem(title: "Best Seller", image: UIImage(systemName: "book.circle"), tag: 0)
         return vc
     }()

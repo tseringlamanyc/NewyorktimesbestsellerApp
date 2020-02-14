@@ -29,6 +29,19 @@ private let settingsView = SettingsView()
               sections = allCategories.map {$0.listName}
           }
       }
+    
+    private func getCategories() {
+         CategoryAPI.getCategory { [weak self] (result) in
+             switch result {
+             case .failure(_):
+                 print("Couldnt get categories")
+             case .success(let data):
+                 DispatchQueue.main.async {
+                     self?.allCategories = data
+                 }
+             }
+         }
+     }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,11 +52,11 @@ private let settingsView = SettingsView()
     settingsView.pickerViewSelected.delegate = self
     
     // ADDITION: scroll to picker view's index if there is a section saved in UserDefaults
-    if let sectionName = userPreference.getSectionName() {
-      if let index = sections.firstIndex(of: sectionName) {
-        settingsView.pickerViewSelected.selectRow(index, inComponent: 0, animated: true)
-      }
-    }
+//    if let sectionName = userPreference.getSectionName() {
+//      if let index = sections.firstIndex(of: sectionName) {
+//        settingsView.pickerViewSelected.selectRow(index, inComponent: 0, animated: true)
+//      }
+//    }
   }
 }
 
