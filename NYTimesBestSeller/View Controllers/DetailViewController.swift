@@ -8,12 +8,14 @@
 
 import UIKit
 import DataPersistence
+import SafariServices
 
 class DetailViewController: UIViewController {
     
     private var book: Book
     
     private let detailView = DetailView()
+    private var googleBooks = [GoogleBook]()
     
     private var dataPersistence: DataPersistence<Book>
     
@@ -36,6 +38,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
+        
+        detailView.detailbutton.addTarget(self, action: #selector(linkButton(sender:)), for: .touchUpInside)
+        
       view.backgroundColor = .systemBackground
       
       // adding a UIBarButtonItem to the right side to the navigation bar's title
@@ -47,22 +52,18 @@ class DetailViewController: UIViewController {
     
     private func updateUI() {
      
-//      guard let updateBook = book else {
-//        fatalError("did not load an article")
-//      }
       updateBookmarkState(book)
         navigationItem.title = book.title
-     //detailView.abstractHeadline.text = book.abstract
       
-        detailView.newsImageView.getImage(with: book.bookImage) { [weak self] (result) in
+        detailView.booksCoverImage.getImage(with: book.bookImage) { [weak self] (result) in
         switch result {
         case .failure:
           DispatchQueue.main.async {
-            self?.detailView.newsImageView.image = UIImage(systemName: "exclamationmark-octogon")
+            self?.detailView.booksCoverImage.image = UIImage(systemName: "exclamationmark-octogon")
           }
         case .success(let image):
           DispatchQueue.main.async {
-            self?.detailView.newsImageView.image = image
+            self?.detailView.booksCoverImage.image = image
           }
         }
       }
@@ -81,25 +82,54 @@ class DetailViewController: UIViewController {
         
         
     }
+    @IBAction func linkButton(sender: UIButton) {
+         print("button pressed")
+         
+         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+         present(alertController, animated: true)
+         
+         let timesReviewAction = UIAlertAction(title: "NYT Review", style: .default) { [weak self] alertAction in
+             let nytWebString = self?.book.bookReviewLink
+             guard let url = URL(string: nytWebString ?? "") else {
+                 if nytWebString == "" {
+                     self?.showAlert(title: "Sorry", message: "The New York Times has yet to review this book.")
+                 }
+                 return
+             }
+             let safariNYTVC = SFSafariViewController(url: url)
+             self?.present(safariNYTVC, animated: true)
+         }
+         
+         let googleInfoAction = UIAlertAction(title: "Google", style: .default) { [weak self] alertAction in
+             let googleWebString = self?.googleBooks.first?.volumeInfo.previewLink
+             guard let url = URL(string: googleWebString ?? "") else {
+                 if googleWebString == "" {
+                     self?.showAlert(title: "Sorry", message: "There is no preview of this book available on Google Books.")
+                 }
+                 return
+             }
+             let safariNYTVC = SFSafariViewController(url: url)
+             self?.present(safariNYTVC, animated: true)
+         }
+         
+         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+         
+         alertController.addAction(timesReviewAction)
+         alertController.addAction(googleInfoAction)
+         alertController.addAction(cancelAction)
+     }
     
-    @objc func saveArticleButtonPressed(_ sender: UIBarButtonItem) {
-////      guard let article = book else { return }
-//      // ADDITION: check for duplicates
-//      if dataPersistence.hasItemBeenSaved(book) {
-//        if let index = try? dataPersistence.loadItems().firstIndex(of: book) {
-//          do {
-//            try dataPersistence.deleteItem(at: index)
-//          } catch {
-//            print("error deleting article: \(error)")
-//          }
-//        }
-//      } else {
+    @objc
+    func saveArticleButtonPressed(_ sender: UIBarButtonItem) {
+
         do {
           // save to documents directory
           try dataPersistence.createItem(book)
         } catch {
           print("error saving article: \(error)")
         }
+        showAlert(title: "❤️", message: "Book was saved to your Favorites")
+        sender.isEnabled = false
 
       // ADDITION:
       // update bookmark state
