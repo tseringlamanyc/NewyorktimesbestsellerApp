@@ -18,14 +18,12 @@ class FavoritesDetailController: UIViewController {
         view = modallView
     }
     
-    private var googleBook = [GoogleBook]()
+    private var googleBooks = [GoogleBook]()
     
     private var dataPersistence: DataPersistence<Book>
     
     private var selectedBook: Book
-    
-    //    public var booksIsbn: String?
-    
+        
     init(_ dataPersistence: DataPersistence<Book>, book: Book) {
         self.dataPersistence = dataPersistence
         self.selectedBook = book
@@ -76,10 +74,6 @@ class FavoritesDetailController: UIViewController {
     }
     
     private func updateUI() {
-        //        guard let book = selectedBook else {
-        //            return
-        //        }
-        
         let book = selectedBook
         
         DispatchQueue.main.async {
@@ -109,7 +103,7 @@ class FavoritesDetailController: UIViewController {
     
     @IBAction func linkButton(sender: UIButton) {
         print("button pressed")
-        
+        print(selectedBook.getBuyLinkURL(for: .appleBooks))
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         present(alertController, animated: true)
         
@@ -126,7 +120,7 @@ class FavoritesDetailController: UIViewController {
         }
         
         let googleInfoAction = UIAlertAction(title: "Google", style: .default) { [weak self] alertAction in
-            let googleWebString = self?.googleBook.first?.volumeInfo.previewLink
+            let googleWebString = self?.googleBooks.first?.volumeInfo.previewLink
             guard let url = URL(string: googleWebString ?? "") else {
                 if googleWebString == "" {
                     self?.showAlert(title: "Sorry", message: "There is no preview of this book available on Google Books.")
