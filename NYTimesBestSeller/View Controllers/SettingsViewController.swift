@@ -39,11 +39,11 @@ private let settingsView = SettingsView()
     settingsView.pickerViewSelected.delegate = self
     
     // ADDITION: scroll to picker view's index if there is a section saved in UserDefaults
-    if let sectionName = userPreference.getSectionName() {
-      if let index = sections.firstIndex(of: sectionName) {
-        settingsView.pickerViewSelected.selectRow(index, inComponent: 0, animated: true)
-      }
-    }
+//    if let sectionName = userPreference.getSectionName() {
+//      if let index = sections.firstIndex(of: sectionName) {
+//        settingsView.pickerViewSelected.selectRow(index, inComponent: 0, animated: true)
+//      }
+//    }
   }
 }
 
