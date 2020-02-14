@@ -83,7 +83,7 @@ extension Book {
         let result = buyLinks.filter { $0.name == linkType.rawValue }
         guard let firstResult = result.first else { return "Empty" }
         
-        
+
         
         return firstResult.url
     }
