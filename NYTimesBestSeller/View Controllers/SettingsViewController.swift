@@ -29,6 +29,19 @@ private let settingsView = SettingsView()
               sections = allCategories.map {$0.listName}
           }
       }
+    
+    private func getCategories() {
+         CategoryAPI.getCategory { [weak self] (result) in
+             switch result {
+             case .failure(_):
+                 print("Couldnt get categories")
+             case .success(let data):
+                 DispatchQueue.main.async {
+                     self?.allCategories = data
+                 }
+             }
+         }
+     }
   
   override func viewDidLoad() {
     super.viewDidLoad()
