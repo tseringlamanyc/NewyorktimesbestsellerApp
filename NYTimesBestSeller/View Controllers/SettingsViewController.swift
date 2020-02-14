@@ -26,7 +26,7 @@ private let settingsView = SettingsView()
       
       private var allCategories = [Categories]() {
           didSet {
-              sections = allCategories.map {$0.listName}
+            sections = allCategories.map {$0.listName}.sorted()
           }
       }
     
@@ -50,6 +50,7 @@ private let settingsView = SettingsView()
     // setup picker view
     settingsView.pickerViewSelected.dataSource = self
     settingsView.pickerViewSelected.delegate = self
+    getCategories()
     
     // ADDITION: scroll to picker view's index if there is a section saved in UserDefaults
 //    if let sectionName = userPreference.getSectionName() {
