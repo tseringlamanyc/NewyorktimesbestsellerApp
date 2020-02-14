@@ -32,12 +32,18 @@ class BestSellerViewController: UIViewController {
         view = bestSellerView
     }
     
-    var sections = [String]() {
+    var nowBook = "Advice How-To and Miscellaneous" {
         didSet {
-            bestSellerView.pickerView.reloadAllComponents()
+            getBooks(category: nowBook)
         }
     }
     
+    var sections = [String]() {
+        didSet {
+            bestSellerView.pickerView.reloadAllComponents()
+            getIndex()
+        }
+    }
     
     private var allCategories = [Categories]() {
         didSet {
@@ -53,30 +59,17 @@ class BestSellerViewController: UIViewController {
         }
     }
     
-    var nowBook = "Advice How-To and Miscellaneous" {
-        didSet {
-            getBooks(category: nowBook)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+    bestSellerView.bestSellerCV.gemini.circleRotationAnimation().radius(450).rotateDirection(.anticlockwise).itemRotationEnabled(false)
         bestSellerView.bestSellerCV.dataSource = self
         bestSellerView.bestSellerCV.delegate = self
         bestSellerView.bestSellerCV.register(BestSellerCell.self, forCellWithReuseIdentifier: "bestCell")
         bestSellerView.pickerView.dataSource = self
         bestSellerView.pickerView.delegate = self
         getCategories()
-        getBooks(category: nowBook)
-        bestSellerView.bestSellerCV.gemini.circleRotationAnimation().radius(450).rotateDirection(.anticlockwise).itemRotationEnabled(false)
-        
-        // check for default category
-//        if let sectionName = userPreference.getSectionName() {
-//            if let index = sections.firstIndex(of: sectionName) {
-//                bestSellerView.pickerView.selectRow(index, inComponent: 0, animated: true)
-//            }
-//        }
+        getIndex()
     }
     
     private func getCategories() {
@@ -91,6 +84,17 @@ class BestSellerViewController: UIViewController {
             }
         }
     }
+    
+    private func getIndex() {
+        if let sectionName = userPreference.getSectionName() {
+            if let index = sections.firstIndex(of: sectionName) {
+                bestSellerView.pickerView.selectRow(index, inComponent: 0, animated: true)
+                nowBook = sectionName
+                print(sectionName)
+            }
+        }
+    }
+    
     
     private func getBooks(category: String) {
         NYTAPIClient.getBooks(for: nowBook) { [weak self] (result) in
@@ -169,8 +173,7 @@ extension BestSellerViewController: UIPickerViewDelegate {
 
 extension BestSellerViewController: UserPreferenceDelegate {
     func didIndexChange(_ userPreference: UserPreference, index: Int) {
-        bestSellerView.pickerView.selectRow(index, inComponent: 0, animated: true)
-        
+        getIndex()
     }
     
     func didChangeNewsSection(_ userPreference: UserPreference, sectionName: String) {
