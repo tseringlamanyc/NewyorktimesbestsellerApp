@@ -13,8 +13,11 @@ class TabBarController: UITabBarController {
     
     public var dataPersistence = DataPersistence<Book>(filename: "savedBooks.plist")
     
+    private var userPreference = UserPreference()
+    
     private lazy var bestSellerVC: BestSellerViewController = {
         let vc = BestSellerViewController()
+        
         vc.tabBarItem = UITabBarItem(title: "Best Seller", image: UIImage(systemName: "book.circle"), tag: 0)
         return vc
     }()
@@ -27,6 +30,7 @@ class TabBarController: UITabBarController {
     
     private lazy var settingVC: SettingsViewController = {
         let vc = SettingsViewController()
+        vc.userPreference = userPreference
         vc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         return vc
     }()

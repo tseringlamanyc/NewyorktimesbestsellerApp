@@ -49,40 +49,16 @@ class FavoritesViewController: UIViewController {
         
         listView.geminiCollectionView.dataSource = self
         listView.geminiCollectionView.delegate = self
-        
-        listView.collectionView.dataSource = self
-        listView.collectionView.delegate = self
-        
-        listView.geminiCollectionView.backgroundColor = .systemGroupedBackground
-        
         listView.geminiCollectionView.register(FavoritesCell.self, forCellWithReuseIdentifier: "geminiBookCell")
+        navigationItem.title = "Favorite Books"
         
-        //        listView.collectionView.register(BookCell.self, forCellWithReuseIdentifier: "bookCell")
         loadBooks()
         
         addBackgroundGradient()
         
-        //        listView.collectionView.gemini
-        //            .customAnimation()
-        //            .translation(x: 0, y: 50, z: 0)
-        //            .rotationAngle(x: 0, y: 13, z: 0)
-        //            .ease(.easeOutExpo)
-        //            .shadowEffect(.fadeIn)
-        //            .maxShadowAlpha(0.3)
-        
-        //            listView.geminiCollectionView.gemini
-        //                .rollRotationAnimation()
-        //                .degree(85)
-        //                .rollEffect(.reverseSineWave)
-        
         listView.geminiCollectionView.gemini
             .cubeAnimation()
             .cubeDegree(90)
-        //                    .alpha(0.15)
-        
-        
-        //        listView.geminiCollectionView.gemini
-        //        .pitchRotationAnimation()
         
         
     }

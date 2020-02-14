@@ -24,7 +24,7 @@ class FavoritesDetailController: UIViewController {
     
     private var selectedBook: Book
     
-//    public var booksIsbn: String?
+    //    public var booksIsbn: String?
     
     init(_ dataPersistence: DataPersistence<Book>, book: Book) {
         self.dataPersistence = dataPersistence
@@ -59,17 +59,13 @@ class FavoritesDetailController: UIViewController {
     
     private func loadBooks() {
         
-//        guard let isbn = selectedBook?.primaryIsbn10 else {
-//            return
-//        }
-        
         GoogleAPIClient.getGoogleBooks(for: selectedBook.primaryIsbn10) { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 print("error: \(appError)")
             case .success(let bookArr):
-//                self?.googleBook = bookArr
-//                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
+                //                self?.googleBook = bookArr
+                //                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
                 DispatchQueue.main.async {
                     self?.modallView.descriptionLabel.text = bookArr.first?.volumeInfo.description ?? "N/A"
                     self?.modallView.bookTitle.text = bookArr.first?.volumeInfo.title ?? "N/A"
@@ -80,9 +76,9 @@ class FavoritesDetailController: UIViewController {
     }
     
     private func updateUI() {
-//        guard let book = selectedBook else {
-//            return
-//        }
+        //        guard let book = selectedBook else {
+        //            return
+        //        }
         
         let book = selectedBook
         
@@ -95,16 +91,10 @@ class FavoritesDetailController: UIViewController {
                 self.modallView.weeksOnListLabel.text = "\(book.weeksOnList) weeks on list. Ranked \(book.rankLastWeek) last week"
             }
         }
-        
     }
     
     private func updateBookImage() {
-        
-//        guard let book = selectedBook else { return }
-        
-        let book = selectedBook
-        
-        modallView.bookImageView.getImage(with: book.bookImage) {[weak self] (result) in
+        modallView.bookImageView.getImage(with: selectedBook.bookImage) {[weak self] (result) in
             switch result {
             case .failure:
                 self?.modallView.bookImageView.image = UIImage(systemName: "photo")
@@ -160,10 +150,7 @@ class FavoritesDetailController: UIViewController {
 
 extension UIViewController {
     func showAlert(title: String, message: String, completion: ((UIAlertAction) -> Void)? = nil) {
-        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: completion)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
