@@ -11,10 +11,13 @@ import Gemini
 import ImageKit
 
 protocol GeminiCellDelegate: AnyObject {
-    func didLongPress(_ imageCell: FavoritesCell)
+    func didLongPress(_ imageCell: FavoritesCell, book: Book)
 }
 
 class FavoritesCell: GeminiCell {
+    
+    private var currentBook: Book!
+    
     public lazy var bookImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "photo")
@@ -100,6 +103,7 @@ class FavoritesCell: GeminiCell {
     }
     
     public func configureCell(for book: Book) {
+        currentBook = book
         bookImageView.getImage(with: book.bookImage) {[weak self] (result) in
             switch result {
             case .failure:
@@ -117,7 +121,7 @@ class FavoritesCell: GeminiCell {
             gesture.state = .cancelled
             return
         }
-        geminiDelegate?.didLongPress(self)
+        geminiDelegate?.didLongPress(self, book: currentBook)
     }
     
 }

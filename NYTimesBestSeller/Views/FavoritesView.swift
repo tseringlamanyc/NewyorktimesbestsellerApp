@@ -23,13 +23,6 @@ class FavoritesView: UIView {
         return cv
     }()
     
-    public lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        return cv
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()

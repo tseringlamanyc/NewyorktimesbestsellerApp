@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Gemini
 
 class BestSellerView: UIView {
     
-    public lazy var bestSellerCV: UICollectionView = {
+    public lazy var bestSellerCV: GeminiCollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.backgroundColor = .systemBlue
+        let cv = GeminiCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        cv.backgroundColor = .systemGray6
         return cv
     }()
     

@@ -39,6 +39,7 @@ class EmptyView: UIView {
         titleLabel.text = title
         messageLabel.text = message
         commonInit()
+        backgroundColor = .systemBackground
     }
     
     required init?(coder: NSCoder) {

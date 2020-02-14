@@ -18,14 +18,18 @@ class FavoritesDetailController: UIViewController {
         view = modallView
     }
     
-    private var googleBook = [GoogleBook]()
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(didTap(_:)))
+        return gesture
+    }()
+    
+    private var googleBooks = [GoogleBook]()
     
     private var dataPersistence: DataPersistence<Book>
     
     private var selectedBook: Book
-    
-//    public var booksIsbn: String?
-    
+        
     init(_ dataPersistence: DataPersistence<Book>, book: Book) {
         self.dataPersistence = dataPersistence
         self.selectedBook = book
@@ -42,7 +46,8 @@ class FavoritesDetailController: UIViewController {
         
         modallView.menuButton.addTarget(self, action: #selector(linkButton(sender:)), for: .touchUpInside)
         modallView.backgroundColor = .clear
-        
+        modallView.isUserInteractionEnabled = true
+        modallView.addGestureRecognizer(tapGesture)
         loadBooks()
         updateBookImage()
         updateUI()
@@ -59,17 +64,13 @@ class FavoritesDetailController: UIViewController {
     
     private func loadBooks() {
         
-//        guard let isbn = selectedBook?.primaryIsbn10 else {
-//            return
-//        }
-        
         GoogleAPIClient.getGoogleBooks(for: selectedBook.primaryIsbn10) { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 print("error: \(appError)")
             case .success(let bookArr):
-//                self?.googleBook = bookArr
-//                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
+                //                self?.googleBook = bookArr
+                //                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
                 DispatchQueue.main.async {
                     self?.modallView.descriptionLabel.text = bookArr.first?.volumeInfo.description ?? "N/A"
                     self?.modallView.bookTitle.text = bookArr.first?.volumeInfo.title ?? "N/A"
@@ -80,10 +81,6 @@ class FavoritesDetailController: UIViewController {
     }
     
     private func updateUI() {
-//        guard let book = selectedBook else {
-//            return
-//        }
-        
         let book = selectedBook
         
         DispatchQueue.main.async {
@@ -95,16 +92,10 @@ class FavoritesDetailController: UIViewController {
                 self.modallView.weeksOnListLabel.text = "\(book.weeksOnList) weeks on list. Ranked \(book.rankLastWeek) last week"
             }
         }
-        
     }
     
     private func updateBookImage() {
-        
-//        guard let book = selectedBook else { return }
-        
-        let book = selectedBook
-        
-        modallView.bookImageView.getImage(with: book.bookImage) {[weak self] (result) in
+        modallView.bookImageView.getImage(with: selectedBook.bookImage) {[weak self] (result) in
             switch result {
             case .failure:
                 self?.modallView.bookImageView.image = UIImage(systemName: "photo")
@@ -119,7 +110,7 @@ class FavoritesDetailController: UIViewController {
     
     @IBAction func linkButton(sender: UIButton) {
         print("button pressed")
-        
+        print(selectedBook.getBuyLinkURL(for: .appleBooks))
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         present(alertController, animated: true)
         
@@ -136,7 +127,7 @@ class FavoritesDetailController: UIViewController {
         }
         
         let googleInfoAction = UIAlertAction(title: "Google", style: .default) { [weak self] alertAction in
-            let googleWebString = self?.googleBook.first?.volumeInfo.previewLink
+            let googleWebString = self?.googleBooks.first?.volumeInfo.previewLink
             guard let url = URL(string: googleWebString ?? "") else {
                 if googleWebString == "" {
                     self?.showAlert(title: "Sorry", message: "There is no preview of this book available on Google Books.")
@@ -152,7 +143,11 @@ class FavoritesDetailController: UIViewController {
         alertController.addAction(timesReviewAction)
         alertController.addAction(googleInfoAction)
         alertController.addAction(cancelAction)
-        
+    }
+    
+    @objc private func didTap(_ gesture: UITapGestureRecognizer) {
+        print("was tapped")
+        self.dismiss(animated: true)
     }
     
 }
@@ -160,10 +155,7 @@ class FavoritesDetailController: UIViewController {
 
 extension UIViewController {
     func showAlert(title: String, message: String, completion: ((UIAlertAction) -> Void)? = nil) {
-        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: completion)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)

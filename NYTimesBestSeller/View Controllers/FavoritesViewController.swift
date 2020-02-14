@@ -15,15 +15,12 @@ class FavoritesViewController: UIViewController {
     
     private var books = [Book]() {
         didSet {
-            DispatchQueue.main.async {
-                self.listView.geminiCollectionView.reloadData()
+            listView.geminiCollectionView.reloadData()
+            if books.isEmpty {
+                listView.geminiCollectionView.backgroundView = EmptyView(title: "Favorited Books", message: "There are currently no saved books in your favorites collection. Start browsing by tapping on the Books Icon.")
+            } else {
+                addBackgroundGradient()
             }
-//            listView.geminiCollectionView.reloadData()
-//            if books.isEmpty {
-//                listView.geminiCollectionView.backgroundView = EmptyView(title: "Favorited Books", message: "There are currently no saved books in your favorites collection. Start browsing by tapping on the Books Icon.")
-//            } else {
-//                listView.geminiCollectionView.backgroundView = nil
-//            }
         }
     }
     
@@ -49,58 +46,24 @@ class FavoritesViewController: UIViewController {
         
         listView.geminiCollectionView.dataSource = self
         listView.geminiCollectionView.delegate = self
-        
-        listView.collectionView.dataSource = self
-        listView.collectionView.delegate = self
-        
-        listView.geminiCollectionView.backgroundColor = .systemGroupedBackground
-        
         listView.geminiCollectionView.register(FavoritesCell.self, forCellWithReuseIdentifier: "geminiBookCell")
-        
-        //        listView.collectionView.register(BookCell.self, forCellWithReuseIdentifier: "bookCell")
-        loadBooks()
-        
+        navigationItem.title = "Favorite Books"
+        view.backgroundColor = .systemBackground
         addBackgroundGradient()
-        
-        //        listView.collectionView.gemini
-        //            .customAnimation()
-        //            .translation(x: 0, y: 50, z: 0)
-        //            .rotationAngle(x: 0, y: 13, z: 0)
-        //            .ease(.easeOutExpo)
-        //            .shadowEffect(.fadeIn)
-        //            .maxShadowAlpha(0.3)
-        
-        //            listView.geminiCollectionView.gemini
-        //                .rollRotationAnimation()
-        //                .degree(85)
-        //                .rollEffect(.reverseSineWave)
-        
-        listView.geminiCollectionView.gemini
-            .cubeAnimation()
-            .cubeDegree(90)
-        //                    .alpha(0.15)
-        
-        
-        //        listView.geminiCollectionView.gemini
-        //        .pitchRotationAnimation()
-        
-        
+        cubeAnimation()
+        getSavedBooks()
     }
     
-    private func loadBooks() {
-        NYTAPIClient.getBooks(for: "hardcover-nonfiction") { (result) in
-            switch result {
-            case .failure(let appError):
-                print("error: \(appError)")
-            case .success(let bookArr):
-                self.books = bookArr
-            }
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getSavedBooks()
     }
     
     private func getSavedBooks() {
         do {
-            books = try dataPersistence.loadItems()
+            books = try dataPersistence.loadItems().reversed()
+            dataPersistence.synchronize(books)
+//            books = try dataPersistence.loadItems()
         } catch {
             showAlert(title: "Oops", message: "Could not load your saved books")
         }
@@ -109,7 +72,7 @@ class FavoritesViewController: UIViewController {
     private func addBackgroundGradient() {
         let collectionViewBackgroundView = UIView()
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame.size = view.frame.size
+        gradientLayer.frame.size = listView.frame.size
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         gradientLayer.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
@@ -117,7 +80,11 @@ class FavoritesViewController: UIViewController {
         listView.geminiCollectionView.backgroundView?.layer.addSublayer(gradientLayer)
     }
     
-    
+    private func cubeAnimation() {
+        listView.geminiCollectionView.gemini
+        .cubeAnimation()
+        .cubeDegree(90)
+    }
 }
 
 
@@ -136,17 +103,10 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "geminiBookCell", for: indexPath) as? FavoritesCell else {
             fatalError("could not deque cell")
         }
-        
-        print("selected")
-        print("cell\(indexPath.row)")
         cell.selectedView.isHidden = true
-        //cell.bookImageView.isHidden = true
-        let book = books[indexPath.row]
-        
-        let bookDetailVC = FavoritesDetailController(dataPersistence, book: book)
-        //        navigationController?.pushViewController(bookDetailVC, animated: true)
 
-//        bookDetailVC.selectedBook = book
+        let book = books[indexPath.row]
+        let bookDetailVC = FavoritesDetailController(dataPersistence, book: book)
         
         self.present(bookDetailVC, animated: true)
         
@@ -166,18 +126,12 @@ extension FavoritesViewController: UICollectionViewDataSource {
         guard let geminiCell = collectionView.dequeueReusableCell(withReuseIdentifier: "geminiBookCell", for: indexPath) as? FavoritesCell else {
             fatalError("could not deque cell")
         }
-        
-        //        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookCell", for: indexPath) as? BookCell else {
-        //            fatalError("could not deque cell")
-        //        }
-        
         let book = books[indexPath.row]
         
         listView.geminiCollectionView.animateCell(geminiCell)
         geminiCell.backgroundColor = .systemBackground
         geminiCell.geminiDelegate = self
         geminiCell.configureCell(for: book)
-        //        cell.configureCell(for: book)
         return geminiCell
     }
     
@@ -195,19 +149,31 @@ extension FavoritesViewController: UICollectionViewDataSource {
     
 }
 
+extension FavoritesViewController: DataPersistenceDelegate {
+    func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        getSavedBooks()
+    }
+    
+    func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        getSavedBooks()
+    }
+    
+}
+
 extension FavoritesViewController: GeminiCellDelegate {
-    func didLongPress(_ imageCell: FavoritesCell) {
+    func didLongPress(_ imageCell: FavoritesCell, book: Book) {
         print("delegate working")
         
         guard let indexPath = listView.geminiCollectionView.indexPath(for: imageCell) else {
             return
         }
-        
+      
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         present(alertController, animated: true)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] alertAction in
-            self?.deleteImageObject(indexPath: indexPath)
+            self?.deleteImageObject(book: book)
+            self?.books.remove(at: indexPath.row)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -216,7 +182,14 @@ extension FavoritesViewController: GeminiCellDelegate {
         alertController.addAction(cancelAction)
     }
     
-    private func deleteImageObject(indexPath: IndexPath) {
-        books.remove(at: indexPath.row)
+    private func deleteImageObject(book: Book) {
+        guard let index = books.firstIndex(of: book) else {
+            return
+        }
+        do {
+            try dataPersistence.deleteItem(at: index)
+        } catch {
+            showAlert(title: "Error", message: "Could not delete Book")
+        }
     }
 }
