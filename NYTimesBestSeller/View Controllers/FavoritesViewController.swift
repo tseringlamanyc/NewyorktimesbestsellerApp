@@ -51,9 +51,6 @@ class FavoritesViewController: UIViewController {
         addBackgroundGradient()
         cubeAnimation()
         getSavedBooks()
-        
-        print(FileManager.getDocumentsDirectory())
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -183,17 +180,13 @@ extension FavoritesViewController: GeminiCellDelegate {
     }
     
     private func deleteImageObject(book: Book) {
-        
-
         guard let index = books.firstIndex(of: book) else {
             return
         }
-        
         do {
             try dataPersistence.deleteItem(at: index)
         } catch {
             showAlert(title: "Error", message: "Could not delete Book")
         }
-        
     }
 }

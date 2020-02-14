@@ -67,3 +67,24 @@ struct Link: Codable & Equatable {
     let url: String
 }
 
+enum BuyLink: String {
+    case amazon = "Amazon"
+    case appleBooks = "Apple Books"
+    case barnesAndNoble = "Barnes and Noble"
+    case localBooksellers = "Local Booksellers"
+}
+
+extension Book {
+    func getBuyLinkURL(for linkType: BuyLink) -> String {
+        
+//        guard let buyLinks = buyLinks else { return "" }
+//        var urlString = ""
+        
+        let result = buyLinks.filter { $0.name == linkType.rawValue }
+        guard let firstResult = result.first else { return "Empty" }
+        
+        
+        
+        return firstResult.url
+    }
+}
