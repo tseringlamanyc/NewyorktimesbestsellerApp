@@ -16,21 +16,12 @@ class FavoritesDetailView: UIView {
         let sv = UIScrollView(frame: .zero)
         sv.frame = self.bounds
         sv.contentSize = CGSize(width: (self.frame.width * 0.75), height: (self.frame.height * 0.658))
-        //        sv.layer.borderWidth = 4
-        //        sv.layer.borderColor = UIColor.lightText.cgColor
         sv.backgroundColor = .systemBackground
         return sv
     }()
     
     public lazy var centerView: UIView = {
         let centeredV = UIView()
-        
-        //        centeredV.frame.size = contentViewSize
-        //                centeredV.layer.borderWidth = 4
-        //        centeredV.layer.borderColor = UIColor.lightText.cgColor
-        //        centeredV.backgroundColor = .systemGray6
-        //        centeredV.backgroundColor = .quaternarySystemFill
-        //        centeredV.alpha = 0.9
         return centeredV
     }()
     
@@ -54,7 +45,6 @@ class FavoritesDetailView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        //        label.textColor = .white
         label.text = ""
         return label
     }()
@@ -63,7 +53,6 @@ class FavoritesDetailView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        //        label.textColor = .white
         label.text = ""
         return label
     }()
@@ -72,7 +61,6 @@ class FavoritesDetailView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.preferredFont(forTextStyle: .headline)
-        //        label.textColor = .white
         label.text = ""
         return label
     }()
@@ -80,7 +68,6 @@ class FavoritesDetailView: UIView {
     public lazy var menuButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "book.fill"), for: .normal)
-        //        button.contentMode = .scaleToFill
         button.imageView?.contentMode = .scaleToFill
         return button
     }()
@@ -89,7 +76,6 @@ class FavoritesDetailView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.preferredFont(forTextStyle: .body)
-//        label.textColor = .white
         label.text = ""
         return label
     }()
