@@ -15,15 +15,15 @@ class FavoritesViewController: UIViewController {
     
     private var books = [Book]() {
         didSet {
-            DispatchQueue.main.async {
-                self.listView.geminiCollectionView.reloadData()
-            }
-//            listView.geminiCollectionView.reloadData()
-//            if books.isEmpty {
-//                listView.geminiCollectionView.backgroundView = EmptyView(title: "Favorited Books", message: "There are currently no saved books in your favorites collection. Start browsing by tapping on the Books Icon.")
-//            } else {
-//                listView.geminiCollectionView.backgroundView = nil
+//            DispatchQueue.main.async {
+//                self.listView.geminiCollectionView.reloadData()
 //            }
+            listView.geminiCollectionView.reloadData()
+            if books.isEmpty {
+                listView.geminiCollectionView.backgroundView = EmptyView(title: "Favorited Books", message: "There are currently no saved books in your favorites collection. Start browsing by tapping on the Books Icon.")
+            } else {
+                listView.geminiCollectionView.backgroundView = nil
+            }
         }
     }
     
@@ -52,7 +52,7 @@ class FavoritesViewController: UIViewController {
         listView.geminiCollectionView.register(FavoritesCell.self, forCellWithReuseIdentifier: "geminiBookCell")
         navigationItem.title = "Favorite Books"
         
-        loadBooks()
+        getSavedBooks()
         
         addBackgroundGradient()
         
