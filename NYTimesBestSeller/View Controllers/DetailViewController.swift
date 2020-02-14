@@ -17,7 +17,6 @@ class DetailViewController: UIViewController {
     
     private var dataPersistence: DataPersistence<Book>
     
-    
     private var bookmarkBarButton: UIBarButtonItem!
     
     init(_ dataPersistence: DataPersistence<Book>, books: Book) {

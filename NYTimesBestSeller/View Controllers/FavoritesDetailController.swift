@@ -152,7 +152,6 @@ class FavoritesDetailController: UIViewController {
         alertController.addAction(timesReviewAction)
         alertController.addAction(googleInfoAction)
         alertController.addAction(cancelAction)
-        
     }
     
 }
