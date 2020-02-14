@@ -19,7 +19,7 @@ class FavoritesViewController: UIViewController {
             if books.isEmpty {
                 listView.geminiCollectionView.backgroundView = EmptyView(title: "Favorited Books", message: "There are currently no saved books in your favorites collection. Start browsing by tapping on the Books Icon.")
             } else {
-                listView.geminiCollectionView.backgroundView = nil
+                addBackgroundGradient()
             }
         }
     }
@@ -48,6 +48,7 @@ class FavoritesViewController: UIViewController {
         listView.geminiCollectionView.delegate = self
         listView.geminiCollectionView.register(FavoritesCell.self, forCellWithReuseIdentifier: "geminiBookCell")
         navigationItem.title = "Favorite Books"
+        view.backgroundColor = .systemBackground
         addBackgroundGradient()
         cubeAnimation()
         getSavedBooks()
@@ -61,6 +62,8 @@ class FavoritesViewController: UIViewController {
     private func getSavedBooks() {
         do {
             books = try dataPersistence.loadItems()
+//            dataPersistence.synchronize(books)
+//            books = try dataPersistence.loadItems()
         } catch {
             showAlert(title: "Oops", message: "Could not load your saved books")
         }
@@ -69,7 +72,7 @@ class FavoritesViewController: UIViewController {
     private func addBackgroundGradient() {
         let collectionViewBackgroundView = UIView()
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame.size = view.frame.size
+        gradientLayer.frame.size = listView.frame.size
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         gradientLayer.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
@@ -164,7 +167,7 @@ extension FavoritesViewController: GeminiCellDelegate {
         guard let indexPath = listView.geminiCollectionView.indexPath(for: imageCell) else {
             return
         }
-//        
+      
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         present(alertController, animated: true)
         

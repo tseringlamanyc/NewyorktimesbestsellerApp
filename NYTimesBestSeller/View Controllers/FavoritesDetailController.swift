@@ -18,6 +18,12 @@ class FavoritesDetailController: UIViewController {
         view = modallView
     }
     
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(didTap(_:)))
+        return gesture
+    }()
+    
     private var googleBooks = [GoogleBook]()
     
     private var dataPersistence: DataPersistence<Book>
@@ -40,7 +46,8 @@ class FavoritesDetailController: UIViewController {
         
         modallView.menuButton.addTarget(self, action: #selector(linkButton(sender:)), for: .touchUpInside)
         modallView.backgroundColor = .clear
-        
+        modallView.isUserInteractionEnabled = true
+        modallView.addGestureRecognizer(tapGesture)
         loadBooks()
         updateBookImage()
         updateUI()
@@ -136,6 +143,11 @@ class FavoritesDetailController: UIViewController {
         alertController.addAction(timesReviewAction)
         alertController.addAction(googleInfoAction)
         alertController.addAction(cancelAction)
+    }
+    
+    @objc private func didTap(_ gesture: UITapGestureRecognizer) {
+        print("was tapped")
+        self.dismiss(animated: true)
     }
     
 }
