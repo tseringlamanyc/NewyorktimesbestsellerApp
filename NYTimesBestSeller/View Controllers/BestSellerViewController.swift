@@ -15,14 +15,18 @@ class BestSellerViewController: UIViewController {
     
     private var dataPersistence: DataPersistence<Book>
     
-    init(dataPersistence: DataPersistence<Book>) {
-           self.dataPersistence = dataPersistence
-           super.init(nibName: nil, bundle: nil)
-       }
-       
-       required init?(coder: NSCoder) {
-           fatalError("init couldnt be implemented")
-       }
+    private var userPreference: UserPreference
+    
+    init(dataPersistence: DataPersistence<Book>,userPreference: UserPreference) {
+        self.dataPersistence = dataPersistence
+        self.userPreference = userPreference
+        super.init(nibName: nil, bundle: nil)
+        self.userPreference.delegate = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init couldnt be implemented")
+    }
     
     override func loadView() {
         view = bestSellerView
@@ -33,6 +37,7 @@ class BestSellerViewController: UIViewController {
             bestSellerView.pickerView.reloadAllComponents()
         }
     }
+    
     
     private var allCategories = [Categories]() {
         didSet {
@@ -66,7 +71,12 @@ class BestSellerViewController: UIViewController {
         getBooks(category: nowBook)
         bestSellerView.bestSellerCV.gemini.circleRotationAnimation().radius(450).rotateDirection(.anticlockwise).itemRotationEnabled(false)
         
-        
+        // check for default category
+//        if let sectionName = userPreference.getSectionName() {
+//            if let index = sections.firstIndex(of: sectionName) {
+//                bestSellerView.pickerView.selectRow(index, inComponent: 0, animated: true)
+//            }
+//        }
     }
     
     private func getCategories() {
@@ -158,7 +168,12 @@ extension BestSellerViewController: UIPickerViewDelegate {
 }
 
 extension BestSellerViewController: UserPreferenceDelegate {
+    func didIndexChange(_ userPreference: UserPreference, index: Int) {
+        bestSellerView.pickerView.selectRow(index, inComponent: 0, animated: true)
+        
+    }
+    
     func didChangeNewsSection(_ userPreference: UserPreference, sectionName: String) {
-        getBooks(category: sectionName)
+        nowBook = sectionName
     }
 }
