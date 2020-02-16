@@ -29,7 +29,7 @@ class FavoritesDetailController: UIViewController {
     private var dataPersistence: DataPersistence<Book>
     
     private var selectedBook: Book
-        
+    
     init(_ dataPersistence: DataPersistence<Book>, book: Book) {
         self.dataPersistence = dataPersistence
         self.selectedBook = book
@@ -53,15 +53,6 @@ class FavoritesDetailController: UIViewController {
         updateUI()
     }
     
-    
-    
-    private var googleTitle = "" {
-        didSet {
-            print(googleTitle)
-            updateUI()
-        }
-    }
-    
     private func loadBooks() {
         
         GoogleAPIClient.getGoogleBooks(for: selectedBook.primaryIsbn10) { [weak self] (result) in
@@ -69,13 +60,10 @@ class FavoritesDetailController: UIViewController {
             case .failure(let appError):
                 print("error: \(appError)")
             case .success(let bookArr):
-                //                self?.googleBook = bookArr
-                //                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
                 DispatchQueue.main.async {
                     self?.modallView.descriptionLabel.text = bookArr.first?.volumeInfo.description ?? "N/A"
                     self?.modallView.bookTitle.text = bookArr.first?.volumeInfo.title ?? "N/A"
                 }
-                dump(bookArr)
             }
         }
     }
@@ -146,8 +134,13 @@ class FavoritesDetailController: UIViewController {
     }
     
     @objc private func didTap(_ gesture: UITapGestureRecognizer) {
-        print("was tapped")
-        self.dismiss(animated: true)
+        
+        UIView.animate(withDuration: 0.85, delay: 0.0, options: [], animations: {
+            self.modallView.scrollView.transform = CGAffineTransform(scaleX: 20, y: 20)
+            self.modallView.alpha = 0.0
+        }) { (done) in
+            self.dismiss(animated: true)
+        }
     }
     
 }
