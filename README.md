@@ -14,3 +14,8 @@ alert controller.
 ![nytImage2](Images/nytImage2.png)
 
 ![nytImage3](Images/nytImage3.png)
+
+##  GIF's
+
+![gif](Images/nytGIF.gif)
+![gif](Assets/nytGIF2.gif)
