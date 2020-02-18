@@ -11,12 +11,13 @@ alert controller.
 ## ScreenShot of App
 
 ![nytImage1](Images/nytImage1.png) 
+
 ![nytImage2](Images/nytImage2.png)
 
 ![nytImage3](Images/nytImage3.png)
 
 ##  GIF's
 
-![gif](Images/nytGIF.gif)
+![gif](Images/nytGIF1.1.gif)
 
-![gif](Assets/nytGIF2.gif)
+![gif](Assets/nytGIF2.1.gif)
