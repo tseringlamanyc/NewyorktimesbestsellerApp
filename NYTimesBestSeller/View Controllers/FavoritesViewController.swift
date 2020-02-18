@@ -63,7 +63,6 @@ class FavoritesViewController: UIViewController {
         do {
             books = try dataPersistence.loadItems().reversed()
             dataPersistence.synchronize(books)
-//            books = try dataPersistence.loadItems()
         } catch {
             showAlert(title: "Oops", message: "Could not load your saved books")
         }

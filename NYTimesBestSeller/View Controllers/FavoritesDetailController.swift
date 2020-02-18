@@ -27,7 +27,7 @@ class FavoritesDetailController: UIViewController {
     
     private var googleBooks = [GoogleBook]() {
         didSet {
-            dump(googleBooks)
+//            dump(googleBooks)
         }
     }
     
@@ -104,40 +104,6 @@ class FavoritesDetailController: UIViewController {
     }
     
     @IBAction func linkButton(sender: UIButton) {
-//                print("button pressed")
-//                print(selectedBook.getBuyLinkURL(for: .appleBooks))
-//                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-//                present(alertController, animated: true)
-//        
-//                let timesReviewAction = UIAlertAction(title: "NYT Review", style: .default) { [weak self] alertAction in
-//                    let nytWebString = self?.selectedBook.bookReviewLink
-//                    guard let url = URL(string: nytWebString ?? "") else {
-//                        if nytWebString == "" {
-//                            self?.showAlert(title: "Sorry", message: "The New York Times has yet to review this book.")
-//                        }
-//                        return
-//                    }
-//                    let safariNYTVC = SFSafariViewController(url: url)
-//                    self?.present(safariNYTVC, animated: true)
-//                }
-//        
-//                let googleInfoAction = UIAlertAction(title: "Google", style: .default) { [weak self] alertAction in
-//                    let googleWebString = self?.googleBooks.first?.volumeInfo.previewLink
-//                    guard let url = URL(string: googleWebString ?? "") else {
-//                        if googleWebString == "" {
-//                            self?.showAlert(title: "Sorry", message: "There is no preview of this book available on Google Books.")
-//                        }
-//                        return
-//                    }
-//                    let safariNYTVC = SFSafariViewController(url: url)
-//                    self?.present(safariNYTVC, animated: true)
-//                }
-//        
-//                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-//        
-//                alertController.addAction(timesReviewAction)
-//                alertController.addAction(googleInfoAction)
-//                alertController.addAction(cancelAction)
         let appearance = SCLAlertView.SCLAppearance(
 
             kCircleBackgroundTopPosition: 0,
