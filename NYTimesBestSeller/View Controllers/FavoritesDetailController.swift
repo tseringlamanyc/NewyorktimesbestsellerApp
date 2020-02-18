@@ -27,7 +27,6 @@ class FavoritesDetailController: UIViewController {
     
     private var googleBooks = [GoogleBook]() {
         didSet {
-//            dump(googleBooks)
         }
     }
     
