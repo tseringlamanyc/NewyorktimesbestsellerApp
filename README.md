@@ -26,7 +26,7 @@ alert controller.
 
 ## Code Snippets
 
-### speech recognition
+### Speech Recognition
 ```swift
 private func getSpeech() {
         let node = audioEngine.inputNode  // nodes to process bits of audio, singleton of incoming audio
