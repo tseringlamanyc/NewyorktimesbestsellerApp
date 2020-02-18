@@ -8,6 +8,7 @@ target 'NYTimesBestSeller' do
   # Pods for NYTimesBestSeller
 
 pod 'Gemini'
+pod 'SCLAlertView'
   target 'NYTimesBestSellerTests' do
     inherit! :search_paths
     # Pods for testing

@@ -81,7 +81,7 @@ class BestSellerViewController: UIViewController, SFSpeechRecognizerDelegate {
         bestSellerView.pickerView.delegate = self
         getCategories()
         getIndex()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "mic.circle"), style: .plain, target: self, action: #selector(speechButton(sender:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(speechButton(sender:)))
     }
     
     private func getCategories() {
@@ -169,11 +169,11 @@ class BestSellerViewController: UIViewController, SFSpeechRecognizerDelegate {
             node.removeTap(onBus: 0)
             recognitionTask?.cancel()
             isRecording = false
-            print("ended")
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(speechButton(sender:)))
         } else {
             self.getSpeech()
             isRecording = true
-            print("started")
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "End", style: .plain, target: self, action: #selector(speechButton(sender:)))
         }
     }
 }
@@ -230,7 +230,6 @@ extension BestSellerViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let sectionName = sections[row]
-        print(sectionName)
         nowBook = sectionName
     }
     

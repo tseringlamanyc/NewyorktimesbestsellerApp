@@ -48,7 +48,7 @@ class FavoritesViewController: UIViewController {
         listView.geminiCollectionView.delegate = self
         listView.geminiCollectionView.register(FavoritesCell.self, forCellWithReuseIdentifier: "geminiBookCell")
         navigationItem.title = "Favorite Books"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .darkGray
         addBackgroundGradient()
         cubeAnimation()
         getSavedBooks()
@@ -63,7 +63,6 @@ class FavoritesViewController: UIViewController {
         do {
             books = try dataPersistence.loadItems().reversed()
             dataPersistence.synchronize(books)
-//            books = try dataPersistence.loadItems()
         } catch {
             showAlert(title: "Oops", message: "Could not load your saved books")
         }
@@ -110,7 +109,7 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
         
         self.present(bookDetailVC, animated: true)
         
-        listView.geminiCollectionView.alpha = 0.25
+        listView.geminiCollectionView.alpha = 0.15
         cell.layoutIfNeeded()
         
     }

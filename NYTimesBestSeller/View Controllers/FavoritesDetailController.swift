@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 import DataPersistence
+import SCLAlertView
 
 class FavoritesDetailController: UIViewController {
     
@@ -24,12 +25,15 @@ class FavoritesDetailController: UIViewController {
         return gesture
     }()
     
-    private var googleBooks = [GoogleBook]()
+    private var googleBooks = [GoogleBook]() {
+        didSet {
+        }
+    }
     
     private var dataPersistence: DataPersistence<Book>
     
     private var selectedBook: Book
-        
+    
     init(_ dataPersistence: DataPersistence<Book>, book: Book) {
         self.dataPersistence = dataPersistence
         self.selectedBook = book
@@ -53,15 +57,6 @@ class FavoritesDetailController: UIViewController {
         updateUI()
     }
     
-    
-    
-    private var googleTitle = "" {
-        didSet {
-            print(googleTitle)
-            updateUI()
-        }
-    }
-    
     private func loadBooks() {
         
         GoogleAPIClient.getGoogleBooks(for: selectedBook.primaryIsbn10) { [weak self] (result) in
@@ -69,15 +64,14 @@ class FavoritesDetailController: UIViewController {
             case .failure(let appError):
                 print("error: \(appError)")
             case .success(let bookArr):
-                //                self?.googleBook = bookArr
-                //                self?.googleTitle = bookArr.first?.volumeInfo.title ?? "N/A"
+                self?.googleBooks = bookArr
                 DispatchQueue.main.async {
                     self?.modallView.descriptionLabel.text = bookArr.first?.volumeInfo.description ?? "N/A"
                     self?.modallView.bookTitle.text = bookArr.first?.volumeInfo.title ?? "N/A"
                 }
-                dump(bookArr)
             }
         }
+        dump(googleBooks)
     }
     
     private func updateUI() {
@@ -109,12 +103,20 @@ class FavoritesDetailController: UIViewController {
     }
     
     @IBAction func linkButton(sender: UIButton) {
-        print("button pressed")
-        print(selectedBook.getBuyLinkURL(for: .appleBooks))
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        present(alertController, animated: true)
-        
-        let timesReviewAction = UIAlertAction(title: "NYT Review", style: .default) { [weak self] alertAction in
+        let appearance = SCLAlertView.SCLAppearance(
+
+            kCircleBackgroundTopPosition: 0,
+            kCircleHeight: 100,
+            kCircleIconHeight: 80,
+            showCircularIcon: true,
+            circleBackgroundColor: .clear
+
+        )
+
+        let alertView = SCLAlertView(appearance: appearance)
+
+        alertView.addButton("NYT Review") { [weak self] in
+            print("first button")
             let nytWebString = self?.selectedBook.bookReviewLink
             guard let url = URL(string: nytWebString ?? "") else {
                 if nytWebString == "" {
@@ -125,8 +127,7 @@ class FavoritesDetailController: UIViewController {
             let safariNYTVC = SFSafariViewController(url: url)
             self?.present(safariNYTVC, animated: true)
         }
-        
-        let googleInfoAction = UIAlertAction(title: "Google", style: .default) { [weak self] alertAction in
+        alertView.addButton("Preview on Google") { [weak self] in
             let googleWebString = self?.googleBooks.first?.volumeInfo.previewLink
             guard let url = URL(string: googleWebString ?? "") else {
                 if googleWebString == "" {
@@ -137,17 +138,24 @@ class FavoritesDetailController: UIViewController {
             let safariNYTVC = SFSafariViewController(url: url)
             self?.present(safariNYTVC, animated: true)
         }
+
+        let image = UIImage.gif(name: "bookGIF2")!
+        let title = selectedBook.title
+
+
+
+        alertView.showCustom("  ", subTitle: "\(title )", color: .gray, icon: image)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alertController.addAction(timesReviewAction)
-        alertController.addAction(googleInfoAction)
-        alertController.addAction(cancelAction)
     }
     
     @objc private func didTap(_ gesture: UITapGestureRecognizer) {
-        print("was tapped")
-        self.dismiss(animated: true)
+        
+        UIView.animate(withDuration: 0.75, delay: 0.0, options: [], animations: {
+            self.modallView.scrollView.transform = CGAffineTransform(scaleX: 20, y: 20)
+            self.modallView.alpha = 0.0
+        }) { (done) in
+            self.dismiss(animated: true)
+        }
     }
     
 }

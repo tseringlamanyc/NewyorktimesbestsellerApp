@@ -77,13 +77,8 @@ enum BuyLink: String {
 extension Book {
     func getBuyLinkURL(for linkType: BuyLink) -> String {
         
-//        guard let buyLinks = buyLinks else { return "" }
-//        var urlString = ""
-        
         let result = buyLinks.filter { $0.name == linkType.rawValue }
         guard let firstResult = result.first else { return "Empty" }
-        
-
         
         return firstResult.url
     }
