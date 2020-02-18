@@ -20,4 +20,4 @@ alert controller.
 
 ![gif](Images/nytGIF1.1.gif)
 
-![gif](Assets/nytGIF2.1.gif)
+![gif](Images/nytGIF2.1.gif)
