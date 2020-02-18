@@ -13,7 +13,6 @@ import SafariServices
 class DetailViewController: UIViewController {
     
     private var book: Book
-    //  private var buy: BuyLink
     
     private let detailView = DetailView()
     private var googleBooks = [GoogleBook]()
@@ -21,10 +20,6 @@ class DetailViewController: UIViewController {
     private var dataPersistence: DataPersistence<Book>
     
     private var bookmarkBarButton: UIBarButtonItem!
-    
-    //    init(<#parameters#>) {
-    //        <#statements#>
-    //    }
     
     init(_ dataPersistence: DataPersistence<Book>, books: Book) {
         self.dataPersistence = dataPersistence
