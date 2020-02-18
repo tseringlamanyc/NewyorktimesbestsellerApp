@@ -104,13 +104,11 @@ class FavoritesDetailController: UIViewController {
     
     @IBAction func linkButton(sender: UIButton) {
         let appearance = SCLAlertView.SCLAppearance(
-
             kCircleBackgroundTopPosition: 0,
             kCircleHeight: 100,
             kCircleIconHeight: 80,
             showCircularIcon: true,
             circleBackgroundColor: .clear
-
         )
 
         let alertView = SCLAlertView(appearance: appearance)
@@ -138,11 +136,8 @@ class FavoritesDetailController: UIViewController {
             let safariNYTVC = SFSafariViewController(url: url)
             self?.present(safariNYTVC, animated: true)
         }
-
         let image = UIImage.gif(name: "bookGIF2")!
         let title = selectedBook.title
-
-
 
         alertView.showCustom("  ", subTitle: "\(title )", color: .gray, icon: image)
         
