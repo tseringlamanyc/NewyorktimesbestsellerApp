@@ -12,7 +12,6 @@ alert controller.
 
 ![nytImage1](Images/nytImage1.2.png)
 ![nytImage2](Images/nytImage2.2.png)
-
 ![nytImage3](Images/nytImage3.2.png)
 
 ##  GIF's
