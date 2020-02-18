@@ -8,3 +8,9 @@ as well as tap a button that drops down a list of links where the book can be pu
 view of books that the user can scroll through and is allowed to segue to a safari page for the book's NYT review or Google preview via a custom 
 alert controller.
 
+## ScreenShot of App
+
+![nytImage1](Images/nytImage1.png) 
+![nytImage2](Images/nytImage2.png)
+
+![nytImage3](Images/nytImage3.png)
