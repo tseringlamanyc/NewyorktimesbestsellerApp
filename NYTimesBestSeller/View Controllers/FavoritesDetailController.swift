@@ -179,13 +179,13 @@ class FavoritesDetailController: UIViewController {
 
 
 
-        alertView.showCustom("  ", subTitle: "\(title )", color: .systemTeal, icon: image)
+        alertView.showCustom("  ", subTitle: "\(title )", color: .gray, icon: image)
         
     }
     
     @objc private func didTap(_ gesture: UITapGestureRecognizer) {
         
-        UIView.animate(withDuration: 0.85, delay: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.75, delay: 0.0, options: [], animations: {
             self.modallView.scrollView.transform = CGAffineTransform(scaleX: 20, y: 20)
             self.modallView.alpha = 0.0
         }) { (done) in
