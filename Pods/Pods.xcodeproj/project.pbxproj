@@ -7,38 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05FB9FD6293F7BBEF23E35863EFCF28D /* EasingAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E707546797EE7BAF20673827861FA /* EasingAnimatable.swift */; };
-		142D5D280048D1464688EE810BF838BD /* YawRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE973BB081BB253F38F6839AB66198A5 /* YawRotationAnimatable.swift */; };
-		2BC98A99502EAD1AE1F6962E14AC5A46 /* GeminiAnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591287F1463A54181E5617155B1B17D7 /* GeminiAnimationModel.swift */; };
-		37E5D071D6368C27F0227856F9F59039 /* GeminiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AA60CA30AE37DA0123B104A9A09447 /* GeminiCell.swift */; };
-		457755386A05F86E85BB5310C938C2F2 /* Gemini-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9191BE2CEB27FDBECB7265AEE599725A /* Gemini-dummy.m */; };
-		4CA2FB130071314BC73C3A0C7FF370FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		4D2F941E57AE0BC1E5A69524DD7F0354 /* PitchRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3309F7630B2507474B3E1DA9608988 /* PitchRotationAnimatable.swift */; };
-		4F203F93EC5C4F8E8389C18E23EBD336 /* ScaleAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6A595FE55B5679EAAA6C36043BC1D /* ScaleAnimatable.swift */; };
+		05FB9FD6293F7BBEF23E35863EFCF28D /* EasingAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3866BE0AFD82F054D4AE5D1B8B2E3 /* EasingAnimatable.swift */; };
+		142D5D280048D1464688EE810BF838BD /* YawRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D7ADC632B80C248A952FA86E66B7E /* YawRotationAnimatable.swift */; };
+		298E4F1A7F3DFD1F512EF7561C18CD20 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3FED876B89CDFD2A8BA4EB8E2E3396 /* SCLAlertView.swift */; };
+		2BC98A99502EAD1AE1F6962E14AC5A46 /* GeminiAnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9C6689D277841A6B39668A077FDC3D /* GeminiAnimationModel.swift */; };
+		37E5D071D6368C27F0227856F9F59039 /* GeminiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910D883787C6B38EF0B289A6DE90821A /* GeminiCell.swift */; };
+		457755386A05F86E85BB5310C938C2F2 /* Gemini-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA525A8D1529CEB3CAE7B48CF7479A5F /* Gemini-dummy.m */; };
+		4D2F941E57AE0BC1E5A69524DD7F0354 /* PitchRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445C93473D100FED6AFBDBBCF9FC5F8 /* PitchRotationAnimatable.swift */; };
+		4F203F93EC5C4F8E8389C18E23EBD336 /* ScaleAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA32DB1F21880EA4FA5B83381A8087 /* ScaleAnimatable.swift */; };
 		523E4E536E259B9B155F88FDD505D708 /* Pods-NYTimesBestSellerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E123A645B7C3D72CE2A3252F9570B84E /* Pods-NYTimesBestSellerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		67367C95022814B451818D7DA966B39F /* CustomAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27B48B6CD60272836B02110DA8E37E /* CustomAnimatable.swift */; };
-		76C1BE5087E110A2F30165142F2529AD /* EasingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADE74E5AB781B5F99A32E6E9BEF9AD /* EasingFunction.swift */; };
-		79C8B3AFF98C4DCC829879066DF316D8 /* Pods-NYTimesBestSeller-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04272C9720971AB98C9ECC6533562FEE /* Pods-NYTimesBestSeller-dummy.m */; };
-		7AA9F67EE2382C95E5A976646B1457CB /* Pods-NYTimesBestSeller-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41024F775D512F98639DDAC811BD6DBB /* Pods-NYTimesBestSeller-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		863D027754593DC7EDD79424E81AAB93 /* CircleRotateAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E41BE858AD08FFD70EAD087FEADF542 /* CircleRotateAnimatable.swift */; };
-		9F3F23545E9660F0E3613A01765E7CCD /* CubeAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E70F00276E3BBE1766379C3834E860 /* CubeAnimatable.swift */; };
-		A2AAC50C345806EA0D59A8EE90231AF1 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333BBB7CA882E8E113B215BCE0B91FF /* UIViewExtension.swift */; };
-		B5A10580A561DCE1A2233E35EC0B6F96 /* GeminiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36F71D1C0F03E797A95AF7A1091E04 /* GeminiCollectionView.swift */; };
-		C510B3C2C8B502B1134AEAFDB7DA10E5 /* Gemini-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B768FCFE9FC7AC7FF1EABE399E6564A /* Gemini-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CABDC21F6BCAE55DD91D98FB15D6F2BF /* RollRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D5A08EBF2E53D02B64989579E1FE26 /* RollRotationAnimatable.swift */; };
+		5394C4DCB14CD55B19D088F07382AE14 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF51638544B69012BD5B6ED6918631F /* SCLExtensions.swift */; };
+		67367C95022814B451818D7DA966B39F /* CustomAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A5D82A7E04E5DC0E462625A4006AC /* CustomAnimatable.swift */; };
+		69437A6AA2866A54AACCCEA857664F47 /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E53467C627F9EB7DC0DFDA9C0A3D130 /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D9275B4E7EAF5E11F647B544CF59E53 /* Pods-NYTimesBestSeller-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41024F775D512F98639DDAC811BD6DBB /* Pods-NYTimesBestSeller-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76C1BE5087E110A2F30165142F2529AD /* EasingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3503905C0BF273CD39CABE056A9429 /* EasingFunction.swift */; };
+		863D027754593DC7EDD79424E81AAB93 /* CircleRotateAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2769B5C5D3E1CA715A3CF784372F7188 /* CircleRotateAnimatable.swift */; };
+		9F3F23545E9660F0E3613A01765E7CCD /* CubeAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0A2E9DEC7EEF74A6A6D982D07D624B /* CubeAnimatable.swift */; };
+		A00531195294693CDDE72B9C9523CA66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		A2AAC50C345806EA0D59A8EE90231AF1 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D429EE58255C699AEE8589C89244F7F /* UIViewExtension.swift */; };
+		B5A10580A561DCE1A2233E35EC0B6F96 /* GeminiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233E74B295232D705AE956FACCBDAC0 /* GeminiCollectionView.swift */; };
+		B98733C303FFBD5D956071ED6940935F /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D0D4646A135FA30428C29522A08C32 /* SCLAlertView-dummy.m */; };
+		C510B3C2C8B502B1134AEAFDB7DA10E5 /* Gemini-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5D86C266A27ECD1301B2DE0CE0AF59 /* Gemini-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CABDC21F6BCAE55DD91D98FB15D6F2BF /* RollRotationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF2485CC036FAC37C3336B4A0DA494 /* RollRotationAnimatable.swift */; };
+		CB26FE70670F9E226154EE95A850EEB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		D524ECF2235BAD6DBF10894304F2E197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		DE87ECAB93B21749969B2C63FE3ED3F0 /* UIAppearanceAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C9C0E8B9E6139A1EE35FB58E483C /* UIAppearanceAnimatable.swift */; };
+		DE87ECAB93B21749969B2C63FE3ED3F0 /* UIAppearanceAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B69952AFEEA4984CAD75C7603A77899 /* UIAppearanceAnimatable.swift */; };
 		DFEEE746E2A93D374215DAF955E5407E /* Pods-NYTimesBestSellerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33065507EC7715B709C5F6BD40653F78 /* Pods-NYTimesBestSellerTests-dummy.m */; };
+		E54BB3DEFDE3D3E0C390447CFFE8B2B0 /* Pods-NYTimesBestSeller-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04272C9720971AB98C9ECC6533562FEE /* Pods-NYTimesBestSeller-dummy.m */; };
 		F4450384379D0F1519F680DC3A97977B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7617B6BFAC9E6F4F0048303B0243C45E /* PBXContainerItemProxy */ = {
+		9A8641C995597ED128485E1543579C4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A6AC3B95F2D31FE0816D1936AFDFC4F5;
 			remoteInfo = Gemini;
+		};
+		EA1594F6066B16EA65A4ED6F05CE32A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0152970E5467A11DF89E7D22C63B47C;
+			remoteInfo = SCLAlertView;
 		};
 		F1E923627034444D7DE4C3F6B26D676C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -53,48 +65,65 @@
 		03D3980572153BB260B85697CCE8356D /* Pods-NYTimesBestSellerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NYTimesBestSellerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		04272C9720971AB98C9ECC6533562FEE /* Pods-NYTimesBestSeller-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NYTimesBestSeller-dummy.m"; sourceTree = "<group>"; };
 		0468398757852A293DFA458B5CD484D0 /* Pods_NYTimesBestSeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NYTimesBestSeller.framework; path = "Pods-NYTimesBestSeller.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F36F71D1C0F03E797A95AF7A1091E04 /* GeminiCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiCollectionView.swift; path = Gemini/GeminiCollectionView.swift; sourceTree = "<group>"; };
-		1E1BFC46798C784F03E4015B9CB2D6B4 /* Gemini-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Gemini-Info.plist"; sourceTree = "<group>"; };
-		1E41BE858AD08FFD70EAD087FEADF542 /* CircleRotateAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleRotateAnimatable.swift; path = Gemini/CircleRotateAnimatable.swift; sourceTree = "<group>"; };
+		05190D887AE6B4BC09E8D0701D925981 /* Gemini-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gemini-prefix.pch"; sourceTree = "<group>"; };
+		083DF131EA2EA7D3A003C11D26330BBA /* Gemini-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Gemini-Info.plist"; sourceTree = "<group>"; };
+		0E9C6689D277841A6B39668A077FDC3D /* GeminiAnimationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiAnimationModel.swift; path = Gemini/GeminiAnimationModel.swift; sourceTree = "<group>"; };
+		1C13F65ADA3BFAADB2E100330F54AAE6 /* Gemini.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Gemini.modulemap; sourceTree = "<group>"; };
 		201E272E90882A030136E4E9CC23826C /* Pods-NYTimesBestSellerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTimesBestSellerTests.release.xcconfig"; sourceTree = "<group>"; };
-		21AA60CA30AE37DA0123B104A9A09447 /* GeminiCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiCell.swift; path = Gemini/GeminiCell.swift; sourceTree = "<group>"; };
-		2333BBB7CA882E8E113B215BCE0B91FF /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Gemini/UIViewExtension.swift; sourceTree = "<group>"; };
 		23A3F73315B44688432C51C6938EAD85 /* Pods-NYTimesBestSeller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTimesBestSeller.debug.xcconfig"; sourceTree = "<group>"; };
-		29D5A08EBF2E53D02B64989579E1FE26 /* RollRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RollRotationAnimatable.swift; path = Gemini/RollRotationAnimatable.swift; sourceTree = "<group>"; };
+		2769B5C5D3E1CA715A3CF784372F7188 /* CircleRotateAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleRotateAnimatable.swift; path = Gemini/CircleRotateAnimatable.swift; sourceTree = "<group>"; };
 		2A6741A555473872FC9B5D326B063F34 /* Pods-NYTimesBestSeller-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NYTimesBestSeller-Info.plist"; sourceTree = "<group>"; };
+		2E5D86C266A27ECD1301B2DE0CE0AF59 /* Gemini-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gemini-umbrella.h"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		33065507EC7715B709C5F6BD40653F78 /* Pods-NYTimesBestSellerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NYTimesBestSellerTests-dummy.m"; sourceTree = "<group>"; };
 		336FFAC6247E72CB0EEADD2FD4DDA359 /* Pods_NYTimesBestSellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NYTimesBestSellerTests.framework; path = "Pods-NYTimesBestSellerTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B69952AFEEA4984CAD75C7603A77899 /* UIAppearanceAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIAppearanceAnimatable.swift; path = Gemini/UIAppearanceAnimatable.swift; sourceTree = "<group>"; };
+		3DB3866BE0AFD82F054D4AE5D1B8B2E3 /* EasingAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingAnimatable.swift; path = Gemini/EasingAnimatable.swift; sourceTree = "<group>"; };
 		41024F775D512F98639DDAC811BD6DBB /* Pods-NYTimesBestSeller-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NYTimesBestSeller-umbrella.h"; sourceTree = "<group>"; };
+		4D429EE58255C699AEE8589C89244F7F /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Gemini/UIViewExtension.swift; sourceTree = "<group>"; };
 		4E79958862A94A99F0A40F883CEB810E /* Gemini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gemini.framework; path = Gemini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		591287F1463A54181E5617155B1B17D7 /* GeminiAnimationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiAnimationModel.swift; path = Gemini/GeminiAnimationModel.swift; sourceTree = "<group>"; };
 		5CF1F729E9FEF9420015BFD045DD22EB /* Pods-NYTimesBestSeller-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NYTimesBestSeller-acknowledgements.plist"; sourceTree = "<group>"; };
+		5E53467C627F9EB7DC0DFDA9C0A3D130 /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
 		7393D1261E205E16D84A3A2D9715FF24 /* Pods-NYTimesBestSellerTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NYTimesBestSellerTests-Info.plist"; sourceTree = "<group>"; };
-		84E70F00276E3BBE1766379C3834E860 /* CubeAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CubeAnimatable.swift; path = Gemini/CubeAnimatable.swift; sourceTree = "<group>"; };
-		86F6A595FE55B5679EAAA6C36043BC1D /* ScaleAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScaleAnimatable.swift; path = Gemini/ScaleAnimatable.swift; sourceTree = "<group>"; };
-		8B768FCFE9FC7AC7FF1EABE399E6564A /* Gemini-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gemini-umbrella.h"; sourceTree = "<group>"; };
-		9191BE2CEB27FDBECB7265AEE599725A /* Gemini-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Gemini-dummy.m"; sourceTree = "<group>"; };
-		94A2C9C0E8B9E6139A1EE35FB58E483C /* UIAppearanceAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIAppearanceAnimatable.swift; path = Gemini/UIAppearanceAnimatable.swift; sourceTree = "<group>"; };
-		965A75D92CF09D4663338A5AD3E45B32 /* Gemini.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Gemini.modulemap; sourceTree = "<group>"; };
+		7445C93473D100FED6AFBDBBCF9FC5F8 /* PitchRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PitchRotationAnimatable.swift; path = Gemini/PitchRotationAnimatable.swift; sourceTree = "<group>"; };
+		7AEF2485CC036FAC37C3336B4A0DA494 /* RollRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RollRotationAnimatable.swift; path = Gemini/RollRotationAnimatable.swift; sourceTree = "<group>"; };
+		850D7ADC632B80C248A952FA86E66B7E /* YawRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YawRotationAnimatable.swift; path = Gemini/YawRotationAnimatable.swift; sourceTree = "<group>"; };
+		858C9489F4E7E93A2D62A60D2CA4A524 /* SCLAlertView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SCLAlertView-Info.plist"; sourceTree = "<group>"; };
+		910D883787C6B38EF0B289A6DE90821A /* GeminiCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiCell.swift; path = Gemini/GeminiCell.swift; sourceTree = "<group>"; };
+		9233E74B295232D705AE956FACCBDAC0 /* GeminiCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeminiCollectionView.swift; path = Gemini/GeminiCollectionView.swift; sourceTree = "<group>"; };
+		92F811D42F5E2AA5ECC53100E111B17F /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
+		962A4B1F73A781D3BB906D0525BD2A8A /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SCLAlertView.framework; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E9212C69D0BECEE6BD0B5613B076CD8 /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
 		A9637C8D86C9886E3288E30B4650C01D /* Pods-NYTimesBestSellerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTimesBestSellerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AE3309F7630B2507474B3E1DA9608988 /* PitchRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PitchRotationAnimatable.swift; path = Gemini/PitchRotationAnimatable.swift; sourceTree = "<group>"; };
+		AB3503905C0BF273CD39CABE056A9429 /* EasingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingFunction.swift; path = Gemini/EasingFunction.swift; sourceTree = "<group>"; };
 		B11A54922B716D99B488696117DD602A /* Pods-NYTimesBestSeller-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NYTimesBestSeller-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B5F3054ED7F03799ACDDDA3B3CD02BD4 /* Pods-NYTimesBestSeller.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NYTimesBestSeller.modulemap"; sourceTree = "<group>"; };
-		C16A9030628C8D0C93905844EB21AD59 /* Gemini.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Gemini.xcconfig; sourceTree = "<group>"; };
-		DE27B48B6CD60272836B02110DA8E37E /* CustomAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAnimatable.swift; path = Gemini/CustomAnimatable.swift; sourceTree = "<group>"; };
+		BA525A8D1529CEB3CAE7B48CF7479A5F /* Gemini-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Gemini-dummy.m"; sourceTree = "<group>"; };
+		BDDA32DB1F21880EA4FA5B83381A8087 /* ScaleAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScaleAnimatable.swift; path = Gemini/ScaleAnimatable.swift; sourceTree = "<group>"; };
+		CB0A2E9DEC7EEF74A6A6D982D07D624B /* CubeAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CubeAnimatable.swift; path = Gemini/CubeAnimatable.swift; sourceTree = "<group>"; };
+		D34A5D82A7E04E5DC0E462625A4006AC /* CustomAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomAnimatable.swift; path = Gemini/CustomAnimatable.swift; sourceTree = "<group>"; };
 		DF3E3A57C232AD43CFD34AC6AB7BFFDB /* Pods-NYTimesBestSellerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NYTimesBestSellerTests.modulemap"; sourceTree = "<group>"; };
 		E123A645B7C3D72CE2A3252F9570B84E /* Pods-NYTimesBestSellerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NYTimesBestSellerTests-umbrella.h"; sourceTree = "<group>"; };
 		E5180F802E81B523104253BB664C9759 /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
 		E6A6911FC22EE9B491C6B19B173BD7FA /* Pods-NYTimesBestSeller-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NYTimesBestSeller-frameworks.sh"; sourceTree = "<group>"; };
-		E8B769213C6AE9B8D50598D9B31BF51D /* Gemini-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gemini-prefix.pch"; sourceTree = "<group>"; };
-		ED0E707546797EE7BAF20673827861FA /* EasingAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingAnimatable.swift; path = Gemini/EasingAnimatable.swift; sourceTree = "<group>"; };
-		EDADE74E5AB781B5F99A32E6E9BEF9AD /* EasingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasingFunction.swift; path = Gemini/EasingFunction.swift; sourceTree = "<group>"; };
-		EE973BB081BB253F38F6839AB66198A5 /* YawRotationAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YawRotationAnimatable.swift; path = Gemini/YawRotationAnimatable.swift; sourceTree = "<group>"; };
+		EB3FED876B89CDFD2A8BA4EB8E2E3396 /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
+		F3D0D4646A135FA30428C29522A08C32 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
 		FAF49358783D6F03FE8CD5C55C0E8AC2 /* Pods-NYTimesBestSellerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NYTimesBestSellerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FBADD1489420C8FC9467202EBD3AAD74 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
+		FC406F7BA8255ABA40A70CD73EC24954 /* Gemini.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Gemini.xcconfig; sourceTree = "<group>"; };
+		FCF51638544B69012BD5B6ED6918631F /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		03B5D362B75E1F27D5669A43D702BC8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00531195294693CDDE72B9C9523CA66 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04A524B0180351D9AF209C315843DCD3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,11 +132,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CEA1E6FF14368B48418859D05D1AE22 /* Frameworks */ = {
+		5E8A4B2B2BDB0596037D8EEF71BC30AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CA2FB130071314BC73C3A0C7FF370FA /* Foundation.framework in Frameworks */,
+				CB26FE70670F9E226154EE95A850EEB6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,27 +151,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11AD585B665A329C24D85214F3331AE8 /* Gemini */ = {
+		0094D02550A5E4A23143B4EA99EA22B1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E41BE858AD08FFD70EAD087FEADF542 /* CircleRotateAnimatable.swift */,
-				84E70F00276E3BBE1766379C3834E860 /* CubeAnimatable.swift */,
-				DE27B48B6CD60272836B02110DA8E37E /* CustomAnimatable.swift */,
-				ED0E707546797EE7BAF20673827861FA /* EasingAnimatable.swift */,
-				EDADE74E5AB781B5F99A32E6E9BEF9AD /* EasingFunction.swift */,
-				591287F1463A54181E5617155B1B17D7 /* GeminiAnimationModel.swift */,
-				21AA60CA30AE37DA0123B104A9A09447 /* GeminiCell.swift */,
-				0F36F71D1C0F03E797A95AF7A1091E04 /* GeminiCollectionView.swift */,
-				AE3309F7630B2507474B3E1DA9608988 /* PitchRotationAnimatable.swift */,
-				29D5A08EBF2E53D02B64989579E1FE26 /* RollRotationAnimatable.swift */,
-				86F6A595FE55B5679EAAA6C36043BC1D /* ScaleAnimatable.swift */,
-				94A2C9C0E8B9E6139A1EE35FB58E483C /* UIAppearanceAnimatable.swift */,
-				2333BBB7CA882E8E113B215BCE0B91FF /* UIViewExtension.swift */,
-				EE973BB081BB253F38F6839AB66198A5 /* YawRotationAnimatable.swift */,
-				E3929F4CA459D62095D5EC31706859AB /* Support Files */,
+				AD912A33A9341124F8BA1C7CA22540D9 /* Gemini */,
+				B87BB991037BB41C2E1F86070C517E37 /* SCLAlertView */,
 			);
-			name = Gemini;
-			path = Gemini;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		6DBAAB7851AF5E2EC068951C29B21387 /* Targets Support Files */ = {
@@ -154,12 +169,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7856A93C4961AD6697457A3C4D637766 /* Pods */ = {
+		AD912A33A9341124F8BA1C7CA22540D9 /* Gemini */ = {
 			isa = PBXGroup;
 			children = (
-				11AD585B665A329C24D85214F3331AE8 /* Gemini */,
+				2769B5C5D3E1CA715A3CF784372F7188 /* CircleRotateAnimatable.swift */,
+				CB0A2E9DEC7EEF74A6A6D982D07D624B /* CubeAnimatable.swift */,
+				D34A5D82A7E04E5DC0E462625A4006AC /* CustomAnimatable.swift */,
+				3DB3866BE0AFD82F054D4AE5D1B8B2E3 /* EasingAnimatable.swift */,
+				AB3503905C0BF273CD39CABE056A9429 /* EasingFunction.swift */,
+				0E9C6689D277841A6B39668A077FDC3D /* GeminiAnimationModel.swift */,
+				910D883787C6B38EF0B289A6DE90821A /* GeminiCell.swift */,
+				9233E74B295232D705AE956FACCBDAC0 /* GeminiCollectionView.swift */,
+				7445C93473D100FED6AFBDBBCF9FC5F8 /* PitchRotationAnimatable.swift */,
+				7AEF2485CC036FAC37C3336B4A0DA494 /* RollRotationAnimatable.swift */,
+				BDDA32DB1F21880EA4FA5B83381A8087 /* ScaleAnimatable.swift */,
+				3B69952AFEEA4984CAD75C7603A77899 /* UIAppearanceAnimatable.swift */,
+				4D429EE58255C699AEE8589C89244F7F /* UIViewExtension.swift */,
+				850D7ADC632B80C248A952FA86E66B7E /* YawRotationAnimatable.swift */,
+				CC971911937C5106CE54792568528FBB /* Support Files */,
 			);
-			name = Pods;
+			name = Gemini;
+			path = Gemini;
 			sourceTree = "<group>";
 		};
 		B1E018E60772C75103EF84AA9CCCBC16 /* Pods-NYTimesBestSeller */ = {
@@ -179,6 +209,28 @@
 			path = "Target Support Files/Pods-NYTimesBestSeller";
 			sourceTree = "<group>";
 		};
+		B87BB991037BB41C2E1F86070C517E37 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				EB3FED876B89CDFD2A8BA4EB8E2E3396 /* SCLAlertView.swift */,
+				FCF51638544B69012BD5B6ED6918631F /* SCLExtensions.swift */,
+				E981826DC30F12BC7807C5BB9806009A /* Support Files */,
+			);
+			name = SCLAlertView;
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		BFFE2C8CABD5C841FCD110AEA6CC074C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E79958862A94A99F0A40F883CEB810E /* Gemini.framework */,
+				0468398757852A293DFA458B5CD484D0 /* Pods_NYTimesBestSeller.framework */,
+				336FFAC6247E72CB0EEADD2FD4DDA359 /* Pods_NYTimesBestSellerTests.framework */,
+				962A4B1F73A781D3BB906D0525BD2A8A /* SCLAlertView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,25 +239,29 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		CC971911937C5106CE54792568528FBB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C13F65ADA3BFAADB2E100330F54AAE6 /* Gemini.modulemap */,
+				FC406F7BA8255ABA40A70CD73EC24954 /* Gemini.xcconfig */,
+				BA525A8D1529CEB3CAE7B48CF7479A5F /* Gemini-dummy.m */,
+				083DF131EA2EA7D3A003C11D26330BBA /* Gemini-Info.plist */,
+				05190D887AE6B4BC09E8D0701D925981 /* Gemini-prefix.pch */,
+				2E5D86C266A27ECD1301B2DE0CE0AF59 /* Gemini-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Gemini";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				7856A93C4961AD6697457A3C4D637766 /* Pods */,
-				CFF9FE342674DA6AEEAD27DA86109DA6 /* Products */,
+				0094D02550A5E4A23143B4EA99EA22B1 /* Pods */,
+				BFFE2C8CABD5C841FCD110AEA6CC074C /* Products */,
 				6DBAAB7851AF5E2EC068951C29B21387 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		CFF9FE342674DA6AEEAD27DA86109DA6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4E79958862A94A99F0A40F883CEB810E /* Gemini.framework */,
-				0468398757852A293DFA458B5CD484D0 /* Pods_NYTimesBestSeller.framework */,
-				336FFAC6247E72CB0EEADD2FD4DDA359 /* Pods_NYTimesBestSellerTests.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -216,18 +272,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E3929F4CA459D62095D5EC31706859AB /* Support Files */ = {
+		E981826DC30F12BC7807C5BB9806009A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				965A75D92CF09D4663338A5AD3E45B32 /* Gemini.modulemap */,
-				C16A9030628C8D0C93905844EB21AD59 /* Gemini.xcconfig */,
-				9191BE2CEB27FDBECB7265AEE599725A /* Gemini-dummy.m */,
-				1E1BFC46798C784F03E4015B9CB2D6B4 /* Gemini-Info.plist */,
-				E8B769213C6AE9B8D50598D9B31BF51D /* Gemini-prefix.pch */,
-				8B768FCFE9FC7AC7FF1EABE399E6564A /* Gemini-umbrella.h */,
+				9E9212C69D0BECEE6BD0B5613B076CD8 /* SCLAlertView.modulemap */,
+				92F811D42F5E2AA5ECC53100E111B17F /* SCLAlertView.xcconfig */,
+				F3D0D4646A135FA30428C29522A08C32 /* SCLAlertView-dummy.m */,
+				858C9489F4E7E93A2D62A60D2CA4A524 /* SCLAlertView-Info.plist */,
+				FBADD1489420C8FC9467202EBD3AAD74 /* SCLAlertView-prefix.pch */,
+				5E53467C627F9EB7DC0DFDA9C0A3D130 /* SCLAlertView-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Gemini";
+			path = "../Target Support Files/SCLAlertView";
 			sourceTree = "<group>";
 		};
 		ED1FBC1706699BF32EB48F081A4538CB /* Pods-NYTimesBestSellerTests */ = {
@@ -249,6 +305,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2568FC6A790CFA387B96DBED7E0BC776 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69437A6AA2866A54AACCCEA857664F47 /* SCLAlertView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47C1050EA138131AEFC8697E3A6BDF94 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,11 +321,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D77BE00C7893EE5CDB0B1F27F4E1487D /* Headers */ = {
+		4A705468BD4CFB49A26176DDC56CB2BF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA9F67EE2382C95E5A976646B1457CB /* Pods-NYTimesBestSeller-umbrella.h in Headers */,
+				6D9275B4E7EAF5E11F647B544CF59E53 /* Pods-NYTimesBestSeller-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,21 +379,40 @@
 		};
 		B0275151C26AC54916AE39ABD83A0123 /* Pods-NYTimesBestSeller */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF11B6615010571240A3C3F3F4239F3D /* Build configuration list for PBXNativeTarget "Pods-NYTimesBestSeller" */;
+			buildConfigurationList = 029F04A3DAD624B1074E72684C255BC9 /* Build configuration list for PBXNativeTarget "Pods-NYTimesBestSeller" */;
 			buildPhases = (
-				D77BE00C7893EE5CDB0B1F27F4E1487D /* Headers */,
-				92DCE02D8BC218B19288567F7277E7AF /* Sources */,
-				5CEA1E6FF14368B48418859D05D1AE22 /* Frameworks */,
-				2284BEEA1CF758307FDF03F9FA88BF94 /* Resources */,
+				4A705468BD4CFB49A26176DDC56CB2BF /* Headers */,
+				E67DB5E8C4A1F405B4AC5945288E306F /* Sources */,
+				5E8A4B2B2BDB0596037D8EEF71BC30AA /* Frameworks */,
+				F27C20DB62A5D2AB68B645F88E110DB8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D30A2C82463F0CF7A84BA99D42703E5 /* PBXTargetDependency */,
+				9CF653931BBB2EB53A030C1AD8DE2A3B /* PBXTargetDependency */,
+				C31EE43132B1A13A7400147B532AAC9E /* PBXTargetDependency */,
 			);
 			name = "Pods-NYTimesBestSeller";
 			productName = "Pods-NYTimesBestSeller";
 			productReference = 0468398757852A293DFA458B5CD484D0 /* Pods_NYTimesBestSeller.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E0152970E5467A11DF89E7D22C63B47C /* SCLAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBBBD336E2C1CE47CB387CBD269D6E58 /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
+			buildPhases = (
+				2568FC6A790CFA387B96DBED7E0BC776 /* Headers */,
+				C62043287224DE5DD6688B165F41EA2E /* Sources */,
+				03B5D362B75E1F27D5669A43D702BC8A /* Frameworks */,
+				ECF5EFE0E25156C527D3ED02193610A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCLAlertView;
+			productName = SCLAlertView;
+			productReference = 962A4B1F73A781D3BB906D0525BD2A8A /* SCLAlertView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -350,26 +433,20 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = CFF9FE342674DA6AEEAD27DA86109DA6 /* Products */;
+			productRefGroup = BFFE2C8CABD5C841FCD110AEA6CC074C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A6AC3B95F2D31FE0816D1936AFDFC4F5 /* Gemini */,
 				B0275151C26AC54916AE39ABD83A0123 /* Pods-NYTimesBestSeller */,
 				831A08308DDC1AB1E6746DBFBF938031 /* Pods-NYTimesBestSellerTests */,
+				E0152970E5467A11DF89E7D22C63B47C /* SCLAlertView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		097CB9B0FA8D6D1E109C2EDC3D64362E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2284BEEA1CF758307FDF03F9FA88BF94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,22 +460,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		92DCE02D8BC218B19288567F7277E7AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		ECF5EFE0E25156C527D3ED02193610A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79C8B3AFF98C4DCC829879066DF316D8 /* Pods-NYTimesBestSeller-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F27C20DB62A5D2AB68B645F88E110DB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		9679A71A83C5B203D95E5239675B1E50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DFEEE746E2A93D374215DAF955E5407E /* Pods-NYTimesBestSellerTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C62043287224DE5DD6688B165F41EA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B98733C303FFBD5D956071ED6940935F /* SCLAlertView-dummy.m in Sources */,
+				298E4F1A7F3DFD1F512EF7561C18CD20 /* SCLAlertView.swift in Sources */,
+				5394C4DCB14CD55B19D088F07382AE14 /* SCLExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,14 +517,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E67DB5E8C4A1F405B4AC5945288E306F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E54BB3DEFDE3D3E0C390447CFFE8B2B0 /* Pods-NYTimesBestSeller-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9D30A2C82463F0CF7A84BA99D42703E5 /* PBXTargetDependency */ = {
+		9CF653931BBB2EB53A030C1AD8DE2A3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Gemini;
 			target = A6AC3B95F2D31FE0816D1936AFDFC4F5 /* Gemini */;
-			targetProxy = 7617B6BFAC9E6F4F0048303B0243C45E /* PBXContainerItemProxy */;
+			targetProxy = 9A8641C995597ED128485E1543579C4C /* PBXContainerItemProxy */;
 		};
 		A1AFB03B9A87C7D018920E4E77D5D7C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -439,10 +540,16 @@
 			target = B0275151C26AC54916AE39ABD83A0123 /* Pods-NYTimesBestSeller */;
 			targetProxy = F1E923627034444D7DE4C3F6B26D676C /* PBXContainerItemProxy */;
 		};
+		C31EE43132B1A13A7400147B532AAC9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCLAlertView;
+			target = E0152970E5467A11DF89E7D22C63B47C /* SCLAlertView */;
+			targetProxy = EA1594F6066B16EA65A4ED6F05CE32A6 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1D16FD3B34396DB281A7833465F616D9 /* Debug */ = {
+		079C4DE32B2305F31AA08DBB113DC2BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23A3F73315B44688432C51C6938EAD85 /* Pods-NYTimesBestSeller.debug.xcconfig */;
 			buildSettings = {
@@ -474,6 +581,80 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12FD38B0DD8E02B120F438B43DA8A0B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5180F802E81B523104253BB664C9759 /* Pods-NYTimesBestSeller.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1C84D9AA6638F950F99D7901D6179582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F811D42F5E2AA5ECC53100E111B17F /* SCLAlertView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SCLAlertView/SCLAlertView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
+				PRODUCT_MODULE_NAME = SCLAlertView;
+				PRODUCT_NAME = SCLAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -519,48 +700,9 @@
 			};
 			name = Release;
 		};
-		47B06336D033FA6E395C6ECC9877AB67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5180F802E81B523104253BB664C9759 /* Pods-NYTimesBestSeller.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		72906842097B023E56E6EDEFBDB82877 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C16A9030628C8D0C93905844EB21AD59 /* Gemini.xcconfig */;
+			baseConfigurationReference = FC406F7BA8255ABA40A70CD73EC24954 /* Gemini.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -660,7 +802,7 @@
 		};
 		9F073B22F281D56B2F81ECFC6D7D86B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C16A9030628C8D0C93905844EB21AD59 /* Gemini.xcconfig */;
+			baseConfigurationReference = FC406F7BA8255ABA40A70CD73EC24954 /* Gemini.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -692,6 +834,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		A6E3B17BFFE1D37408081ED2F9739642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F811D42F5E2AA5ECC53100E111B17F /* SCLAlertView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SCLAlertView/SCLAlertView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
+				PRODUCT_MODULE_NAME = SCLAlertView;
+				PRODUCT_NAME = SCLAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		C72B7749F0C48B51501678AD00D33440 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -794,6 +972,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		029F04A3DAD624B1074E72684C255BC9 /* Build configuration list for PBXNativeTarget "Pods-NYTimesBestSeller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				079C4DE32B2305F31AA08DBB113DC2BF /* Debug */,
+				12FD38B0DD8E02B120F438B43DA8A0B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1E88BD0C45D26897B5D303ECA7E96759 /* Build configuration list for PBXNativeTarget "Pods-NYTimesBestSellerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -821,11 +1008,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF11B6615010571240A3C3F3F4239F3D /* Build configuration list for PBXNativeTarget "Pods-NYTimesBestSeller" */ = {
+		EBBBD336E2C1CE47CB387CBD269D6E58 /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D16FD3B34396DB281A7833465F616D9 /* Debug */,
-				47B06336D033FA6E395C6ECC9877AB67 /* Release */,
+				1C84D9AA6638F950F99D7901D6179582 /* Debug */,
+				A6E3B17BFFE1D37408081ED2F9739642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

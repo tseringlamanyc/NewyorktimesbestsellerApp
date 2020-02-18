@@ -48,7 +48,7 @@ class FavoritesViewController: UIViewController {
         listView.geminiCollectionView.delegate = self
         listView.geminiCollectionView.register(FavoritesCell.self, forCellWithReuseIdentifier: "geminiBookCell")
         navigationItem.title = "Favorite Books"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .darkGray
         addBackgroundGradient()
         cubeAnimation()
         getSavedBooks()
@@ -110,7 +110,7 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
         
         self.present(bookDetailVC, animated: true)
         
-        listView.geminiCollectionView.alpha = 0.25
+        listView.geminiCollectionView.alpha = 0.15
         cell.layoutIfNeeded()
         
     }

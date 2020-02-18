@@ -12,6 +12,8 @@
 		026F36F423F5B6BB00980EF7 /* FavoritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */; };
 		026F36F823F5B75700980EF7 /* GoogleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F723F5B75700980EF7 /* GoogleModel.swift */; };
 		026F36FA23F5B7CF00980EF7 /* GoogleAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */; };
+		0270EAE123FB3A2C00B637DE /* bookGIF2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0270EAE023FB3A2C00B637DE /* bookGIF2.gif */; };
+		0270EAE323FB3A7E00B637DE /* GIFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270EAE223FB3A7E00B637DE /* GIFExtension.swift */; };
 		52282B5423F4EB5F0092453D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5323F4EB5F0092453D /* CategoryModel.swift */; };
 		52282B5623F4EBE80092453D /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52282B5523F4EBE80092453D /* CategoryAPI.swift */; };
 		527ACA6D23EB56F700D775E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA6C23EB56F700D775E0 /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 		026F36F323F5B6BB00980EF7 /* FavoritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailView.swift; sourceTree = "<group>"; };
 		026F36F723F5B75700980EF7 /* GoogleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleModel.swift; sourceTree = "<group>"; };
 		026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIClient.swift; sourceTree = "<group>"; };
+		0270EAE023FB3A2C00B637DE /* bookGIF2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bookGIF2.gif; sourceTree = "<group>"; };
+		0270EAE223FB3A7E00B637DE /* GIFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFExtension.swift; sourceTree = "<group>"; };
 		41BE1A85E1297F9906D1E3EE /* Pods-NYTimesBestSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYTimesBestSeller.release.xcconfig"; path = "Target Support Files/Pods-NYTimesBestSeller/Pods-NYTimesBestSeller.release.xcconfig"; sourceTree = "<group>"; };
 		52282B5323F4EB5F0092453D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		52282B5523F4EBE80092453D /* CategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		527ACA6B23EB56F700D775E0 /* NYTimesBestSeller */ = {
 			isa = PBXGroup;
 			children = (
+				0270EAE023FB3A2C00B637DE /* bookGIF2.gif */,
 				527ACAB123EB5B6500D775E0 /* Secrets */,
 				527ACA8323EB57EA00D775E0 /* Api Client */,
 				527ACA8423EB57F700D775E0 /* Model */,
@@ -169,6 +174,7 @@
 				527ACAA123EB596300D775E0 /* NYTAPIClient.swift */,
 				026F36F923F5B7CF00980EF7 /* GoogleAPIClient.swift */,
 				52282B5523F4EBE80092453D /* CategoryAPI.swift */,
+				0270EAE223FB3A7E00B637DE /* GIFExtension.swift */,
 			);
 			path = "Api Client";
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0270EAE123FB3A2C00B637DE /* bookGIF2.gif in Resources */,
 				527ACA7923EB56FA00D775E0 /* LaunchScreen.storyboard in Resources */,
 				527ACA7623EB56FA00D775E0 /* Assets.xcassets in Resources */,
 			);
@@ -427,6 +434,7 @@
 			files = (
 				527ACA9423EB58FC00D775E0 /* DetailViewController.swift in Sources */,
 				527ACAA223EB596300D775E0 /* NYTAPIClient.swift in Sources */,
+				0270EAE323FB3A7E00B637DE /* GIFExtension.swift in Sources */,
 				527ACA7123EB56F700D775E0 /* ViewController.swift in Sources */,
 				527ACAA023EB594F00D775E0 /* NYBestSellerModel.swift in Sources */,
 				0220AFBF23F5F1EC0064CB53 /* EmptyView.swift in Sources */,
@@ -603,13 +611,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83DYP84L8W;
+				DEVELOPMENT_TEAM = 87F72Z6LFG;
 				INFOPLIST_FILE = NYTimesBestSeller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.NYTimesBestSeller;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.NYTimesBestSeller123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -622,13 +630,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 83DYP84L8W;
+				DEVELOPMENT_TEAM = 87F72Z6LFG;
 				INFOPLIST_FILE = NYTimesBestSeller/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.NYTimesBestSeller;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.NYTimesBestSeller123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
