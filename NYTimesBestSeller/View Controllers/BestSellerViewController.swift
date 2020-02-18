@@ -8,8 +8,9 @@
 
 import UIKit
 import DataPersistence
+import Speech
 
-class BestSellerViewController: UIViewController {
+class BestSellerViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     private var bestSellerView = BestSellerView()
     
@@ -27,6 +28,16 @@ class BestSellerViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init couldnt be implemented")
     }
+    
+    let audioEngine = AVAudioEngine() // mic is recieving audio
+    
+    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer() // transcribing, actual recognition
+    
+    let request = SFSpeechAudioBufferRecognitionRequest() // This allocates speech as the user speaks in real-time and controls the buffering
+    
+    var recognitionTask: SFSpeechRecognitionTask? // This will be used to manage, cancel, or stop the current recognition task.
+    
+    var isRecording = false
     
     override func loadView() {
         view = bestSellerView
@@ -61,8 +72,8 @@ class BestSellerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-    bestSellerView.bestSellerCV.gemini.circleRotationAnimation().radius(450).rotateDirection(.anticlockwise).itemRotationEnabled(false)
+        view.backgroundColor = .systemGray4
+        bestSellerView.bestSellerCV.gemini.circleRotationAnimation().radius(450).rotateDirection(.anticlockwise).itemRotationEnabled(false)
         bestSellerView.bestSellerCV.dataSource = self
         bestSellerView.bestSellerCV.delegate = self
         bestSellerView.bestSellerCV.register(BestSellerCell.self, forCellWithReuseIdentifier: "bestCell")
@@ -70,6 +81,7 @@ class BestSellerViewController: UIViewController {
         bestSellerView.pickerView.delegate = self
         getCategories()
         getIndex()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "mic.circle"), style: .plain, target: self, action: #selector(speechButton(sender:)))
     }
     
     private func getCategories() {
@@ -95,6 +107,46 @@ class BestSellerViewController: UIViewController {
         }
     }
     
+    private func getSpeech() {
+        let node = audioEngine.inputNode  // nodes to process bits of audio, singleton of incoming audio
+        let recordingFormat = node.outputFormat(forBus: 0)
+        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            self.request.append(buffer)
+        }
+        audioEngine.prepare()
+        
+        // for error checking
+        do {
+            try audioEngine.start()
+            print("im listening")
+        } catch {
+            return print("\(error)")
+        }
+        guard let myRecognizer = SFSpeechRecognizer() else { // recognizer for locale
+            return // not supported
+        }
+        if !myRecognizer.isAvailable {
+            // recognizer not avaliable
+            return print("not available")
+        }
+        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { [weak self] (result, error) in
+            if result != nil {
+                if let result = result {
+                    // This is where the recognition happens
+                    let userString = result.bestTranscription.formattedString
+                    // This string value will show all of the words that have been said and recognized so far
+                    self?.navigationItem.title = userString
+                    self?.nowBook = userString
+                    if let index = self?.sections.firstIndex(of: userString) {
+                        self?.bestSellerView.pickerView.selectRow(index, inComponent: 0, animated: true)
+                    }
+                } else if let error = error {
+                    print(error)
+                }
+            }
+        })
+    }
+    
     
     private func getBooks(category: String) {
         NYTAPIClient.getBooks(for: nowBook) { [weak self] (result) in
@@ -104,6 +156,24 @@ class BestSellerViewController: UIViewController {
             case .success(let books):
                 self?.allBooks = books
             }
+        }
+    }
+    
+    @objc
+    private func speechButton(sender: UIBarButtonItem) {
+        print("button pressed")
+        if isRecording {
+            request.endAudio()
+            audioEngine.stop()
+            let node = audioEngine.inputNode
+            node.removeTap(onBus: 0)
+            recognitionTask?.cancel()
+            isRecording = false
+            print("ended")
+        } else {
+            self.getSpeech()
+            isRecording = true
+            print("started")
         }
     }
 }
@@ -119,7 +189,7 @@ extension BestSellerViewController: UICollectionViewDataSource {
             fatalError()
         }
         cell.updateCell(book: allBooks[indexPath.row])
-        cell.backgroundColor = .systemBackground
+        cell.backgroundColor = .systemGray4
         return cell
     }
     
