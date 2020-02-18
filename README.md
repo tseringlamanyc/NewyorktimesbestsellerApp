@@ -1,5 +1,10 @@
 # New York Times Best Seller Lists App
 
+## Contributors
+### Margiett Gil - https://github.com/Margiett
+### Tsering Lama - https://github.com/tseringlamanyc
+### Kelby Mittan - https://github.com/kelby-mittan
+
 ## Description
 
 This application allows for a user to use a picker view or speech recognition to filter out and present a custom collection view of The New York Times' best sellers lists based by category.
