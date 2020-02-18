@@ -68,7 +68,7 @@ private func getSpeech() {
         })
     }
 ```
-### custom alert window   
+### Custom alert window   
 ```swift
     
      @IBAction func linkButton(sender: UIButton) {
