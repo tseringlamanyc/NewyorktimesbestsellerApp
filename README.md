@@ -19,3 +19,88 @@ alert controller.
 
 ![gif](Images/nytGIF1.1.gif)
 ![gif](Images/nytGIF2.1.gif)
+
+## Code Snippets
+
+'''swift
+private func getSpeech() {
+        let node = audioEngine.inputNode  // nodes to process bits of audio, singleton of incoming audio
+        let recordingFormat = node.outputFormat(forBus: 0)
+        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            self.request.append(buffer)
+        }
+        audioEngine.prepare()
+        
+        // for error checking
+        do {
+            try audioEngine.start()
+            print("im listening")
+        } catch {
+            return print("\(error)")
+        }
+        guard let myRecognizer = SFSpeechRecognizer() else { // recognizer for locale
+            return // not supported
+        }
+        if !myRecognizer.isAvailable {
+            // recognizer not avaliable
+            return print("not available")
+        }
+        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { [weak self] (result, error) in
+            if result != nil {
+                if let result = result {
+                    // This is where the recognition happens
+                    let userString = result.bestTranscription.formattedString
+                    // This string value will show all of the words that have been said and recognized so far
+                    self?.navigationItem.title = userString
+                    self?.nowBook = userString
+                    if let index = self?.sections.firstIndex(of: userString) {
+                        self?.bestSellerView.pickerView.selectRow(index, inComponent: 0, animated: true)
+                    }
+                } else if let error = error {
+                    print(error)
+                }
+            }
+        })
+    }
+    
+     @IBAction func linkButton(sender: UIButton) {
+        let appearance = SCLAlertView.SCLAppearance(
+            kCircleBackgroundTopPosition: 0,
+            kCircleHeight: 100,
+            kCircleIconHeight: 80,
+            showCircularIcon: true,
+            circleBackgroundColor: .clear
+        )
+
+        let alertView = SCLAlertView(appearance: appearance)
+
+        alertView.addButton("NYT Review") { [weak self] in
+            print("first button")
+            let nytWebString = self?.selectedBook.bookReviewLink
+            guard let url = URL(string: nytWebString ?? "") else {
+                if nytWebString == "" {
+                    self?.showAlert(title: "Sorry", message: "The New York Times has yet to review this book.")
+                }
+                return
+            }
+            let safariNYTVC = SFSafariViewController(url: url)
+            self?.present(safariNYTVC, animated: true)
+        }
+        alertView.addButton("Preview on Google") { [weak self] in
+            let googleWebString = self?.googleBooks.first?.volumeInfo.previewLink
+            guard let url = URL(string: googleWebString ?? "") else {
+                if googleWebString == "" {
+                    self?.showAlert(title: "Sorry", message: "There is no preview of this book available on Google Books.")
+                }
+                return
+            }
+            let safariNYTVC = SFSafariViewController(url: url)
+            self?.present(safariNYTVC, animated: true)
+        }
+        let image = UIImage.gif(name: "bookGIF2")!
+        let title = selectedBook.title
+
+        alertView.showCustom("  ", subTitle: "\(title )", color: .gray, icon: image)
+        
+    }
+'''
