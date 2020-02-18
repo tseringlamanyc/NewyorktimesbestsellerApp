@@ -1,9 +1,9 @@
 # New York Times Best Seller Lists App
 
 ## Contributors
-### Margiett Gil - https://github.com/Margiett
-### Tsering Lama - https://github.com/tseringlamanyc
-### Kelby Mittan - https://github.com/kelby-mittan
+##### Margiett Gil - https://github.com/Margiett
+##### Tsering Lama - https://github.com/tseringlamanyc
+##### Kelby Mittan - https://github.com/kelby-mittan
 
 ## Description
 
@@ -113,6 +113,6 @@ private func getSpeech() {
     }
 ```
 ## Cocoa Pods Used
-### Gemini Cell - Shohei Yokoyama - https://github.com/shoheiyokoyama/Gemini
-### SCLAlert - Viktor Radchenko - https://github.com/vikmeup/SCLAlertView-Swift
+#### Gemini Cell - Shohei Yokoyama - https://github.com/shoheiyokoyama/Gemini
+#### SCLAlert - Viktor Radchenko - https://github.com/vikmeup/SCLAlertView-Swift
 
