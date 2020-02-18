@@ -22,6 +22,7 @@ alert controller.
 
 ## Code Snippets
 
+### speech recognition
 ```swift
 private func getSpeech() {
         let node = audioEngine.inputNode  // nodes to process bits of audio, singleton of incoming audio
@@ -62,6 +63,9 @@ private func getSpeech() {
             }
         })
     }
+```
+### custom alert window   
+```swift
     
      @IBAction func linkButton(sender: UIButton) {
         let appearance = SCLAlertView.SCLAppearance(
