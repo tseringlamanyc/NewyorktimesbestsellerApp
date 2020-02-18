@@ -22,7 +22,7 @@ alert controller.
 
 ## Code Snippets
 
-'''swift
+```swift
 private func getSpeech() {
         let node = audioEngine.inputNode  // nodes to process bits of audio, singleton of incoming audio
         let recordingFormat = node.outputFormat(forBus: 0)
@@ -103,4 +103,4 @@ private func getSpeech() {
         alertView.showCustom("  ", subTitle: "\(title )", color: .gray, icon: image)
         
     }
-'''
+```
