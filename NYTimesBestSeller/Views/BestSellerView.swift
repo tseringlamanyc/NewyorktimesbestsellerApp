@@ -12,19 +12,19 @@ import Gemini
 class BestSellerView: UIView {
     
     public lazy var bestSellerCV: GeminiCollectionView = {
-       let layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = GeminiCollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.backgroundColor = .systemGray6
+        cv.backgroundColor = .systemGray4
         return cv
     }()
     
     public lazy var pickerView: UIPickerView = {
-       let pv = UIPickerView()
-        pv.backgroundColor = .systemBackground
+        let pv = UIPickerView()
+        pv.backgroundColor = .systemGray4
         return pv
     }()
-    
+        
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -61,5 +61,5 @@ class BestSellerView: UIView {
             pickerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
-    
+        
 }

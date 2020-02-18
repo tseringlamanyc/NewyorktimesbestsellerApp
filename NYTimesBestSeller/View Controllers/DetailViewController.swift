@@ -163,6 +163,7 @@ class DetailViewController: UIViewController {
         
         if dataPersistence.hasItemBeenSaved(book) {
             sender.isEnabled = false
+            showAlert(title: "Fail", message: "Book is in your favorites tab")
         } else {
             do {
                 // save to documents directory
