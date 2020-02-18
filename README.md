@@ -107,3 +107,7 @@ private func getSpeech() {
         
     }
 ```
+## Cocoa Pods Used
+### Gemini Cell - Shohei Yokoyama - https://github.com/shoheiyokoyama/Gemini
+### SCLAlert - Viktor Radchenko - https://github.com/vikmeup/SCLAlertView-Swift
+
