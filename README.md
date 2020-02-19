@@ -4,7 +4,7 @@
 ##### Margiett Gil - https://github.com/Margiett
 ##### Tsering Lama - https://github.com/tseringlamanyc
 ##### Kelby Mittan - https://github.com/kelby-mittan
-##### Luba Kaper
+
 
 ## Description
 
